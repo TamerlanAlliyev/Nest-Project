@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Nest.Data;
+
 namespace Nest
 {
 	public class Program
@@ -8,6 +11,10 @@ namespace Nest
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
+
+			builder.Services.AddDbContext<NestContext>(cfg=>
+				cfg.UseSqlServer(builder.Configuration.GetConnectionString("MSSQL"))
+			);
 
 			var app = builder.Build();
 

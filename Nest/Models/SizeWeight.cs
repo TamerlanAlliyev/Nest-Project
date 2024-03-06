@@ -8,6 +8,7 @@ namespace Nest.Models
         public int WeightCount { get; set; }
         public int Size { get; set; }
         public int SizeCount { get; set; }
-        public Product Product { get; set; }
+        public int ProductId { get; set; }
+        public Product Product { get; set; } = null!;
     }
 }

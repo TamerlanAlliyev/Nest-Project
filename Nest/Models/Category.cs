@@ -6,6 +6,9 @@ namespace Nest.Models
     {
         public string Name { get; set; }
         public string Icon { get; set; }
-        public IFormFile FormFile { get; set; }
+        public int ProductId { get; set; }
+        public IFormFile FormFile { get; set; } = null!;
+
+        public List<Product> Product { get; set; } = null!;
     }
 }

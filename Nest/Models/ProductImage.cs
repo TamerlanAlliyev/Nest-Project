@@ -7,7 +7,7 @@ namespace Nest.Models
         public string Url { get; set; }
         public bool? IsMain { get; set; }
         public int ProductId { get; set; }
-        public IFormFile FormFile { get; set; }
-        public Product Product { get; set; }
+        public IFormFile FormFile { get; set; } = null!;
+        public Product Product { get; set; }=null!;
     }
 }

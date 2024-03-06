@@ -10,11 +10,11 @@ namespace Nest.Models
         public decimal? DiscountPrice { get; set; }
         public int CategoryId { get; set; }
         public int VendorsId { get; set; }
-        public Vendor Vendor { get; set; }
-        public List<Category> Category { get; set; }
-        public List<ProductImage> ProductImages { get; set; }
-        public List<CustomerRating> CustomerRatings { get; set; }
-        public List<SizeWeight> SizeWeights { get; set; }
+        public Vendor Vendor { get; set; } = null!;
+        public List<Category> Category { get; set; } = null!;
+        public List<ProductImage> ProductImages { get; set; } = null!;
+        public List<CustomerRating>? CustomerRatings { get; set; }
+        public List<SizeWeight> SizeWeights { get; set; } = null!;
 
     }
 }
