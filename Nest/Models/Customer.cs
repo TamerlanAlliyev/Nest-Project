@@ -16,7 +16,7 @@ namespace Nest.Models
         public string PhoneNumber { get; set; }
         public string? Image { get; set; }
 
-        public List<Product> Products { get; set; } = null!;
+        //public List<Product> Products { get; set; } = null!;
         public List<CustomerRating> CustomerRatings { get; set; } = null!;
     }
 }

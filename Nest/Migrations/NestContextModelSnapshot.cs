@@ -72,9 +72,6 @@ namespace Nest.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
@@ -194,17 +191,11 @@ namespace Nest.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<int>("CreateBy")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("CustomerId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -236,8 +227,6 @@ namespace Nest.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
 
                     b.HasIndex("VendorId");
 
@@ -431,10 +420,6 @@ namespace Nest.Migrations
 
             modelBuilder.Entity("Nest.Models.Product", b =>
                 {
-                    b.HasOne("Nest.Models.Customer", null)
-                        .WithMany("Products")
-                        .HasForeignKey("CustomerId");
-
                     b.HasOne("Nest.Models.Vendor", "Vendor")
                         .WithMany("Products")
                         .HasForeignKey("VendorId")
@@ -469,8 +454,6 @@ namespace Nest.Migrations
             modelBuilder.Entity("Nest.Models.Customer", b =>
                 {
                     b.Navigation("CustomerRatings");
-
-                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("Nest.Models.Product", b =>

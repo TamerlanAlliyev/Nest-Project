@@ -18,9 +18,14 @@ namespace Nest.Data.Configurations
             builder.HasKey(m=>m.Id);
             builder.ToTable("ProductImages");
 
-            builder.HasOne<Product>()
-                .WithMany()
-                .HasForeignKey(m => m.ProductId);
+            builder.HasOne(pi=>pi.Product)
+                .WithMany(pi=>pi.ProductImages)
+                .HasForeignKey(pi=>pi.ProductId);
+
+
+            //builder.HasOne<Product>()
+            //    .WithMany()
+            //    .HasForeignKey(m => m.ProductId);
         }
     }
 }

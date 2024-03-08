@@ -12,8 +12,8 @@ using Nest.Data;
 namespace Nest.Migrations
 {
     [DbContext(typeof(NestContext))]
-    [Migration("20240307171632_Models_Configurations")]
-    partial class Models_Configurations
+    [Migration("20240308141603_Models")]
+    partial class Models
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -73,9 +73,6 @@ namespace Nest.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -195,9 +192,6 @@ namespace Nest.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
 
                     b.Property<int>("CreateBy")
                         .HasColumnType("int");
@@ -410,7 +404,7 @@ namespace Nest.Migrations
             modelBuilder.Entity("Nest.Models.CustomerRating", b =>
                 {
                     b.HasOne("Nest.Models.Customer", "Customer")
-                        .WithMany()
+                        .WithMany("CustomerRatings")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -429,7 +423,7 @@ namespace Nest.Migrations
             modelBuilder.Entity("Nest.Models.Product", b =>
                 {
                     b.HasOne("Nest.Models.Vendor", "Vendor")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("VendorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -459,6 +453,11 @@ namespace Nest.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Nest.Models.Customer", b =>
+                {
+                    b.Navigation("CustomerRatings");
+                });
+
             modelBuilder.Entity("Nest.Models.Product", b =>
                 {
                     b.Navigation("CustomerRatings");
@@ -466,6 +465,11 @@ namespace Nest.Migrations
                     b.Navigation("ProductImages");
 
                     b.Navigation("SizeWeights");
+                });
+
+            modelBuilder.Entity("Nest.Models.Vendor", b =>
+                {
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

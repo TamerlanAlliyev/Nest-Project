@@ -13,15 +13,20 @@ namespace Nest.Data.Configurations
 
             builder.Property(m => m.Name).HasColumnType("varchar(100)").IsRequired();
             builder.Property(m => m.Icon).HasColumnType("varchar(200)").IsRequired();
-            builder.Property(m=>m.ProductId).HasColumnType("int").IsRequired();
+            //builder.Property(m=>m.ProductId).HasColumnType("int").IsRequired();
 
             builder.HasKey(m=>m.Id);
             builder.ToTable("Categories");
 
-            builder.HasOne<Product>()
-                .WithMany()
-                .HasPrincipalKey(m => m.Id)
-                .HasForeignKey(m => m.ProductId);
+            //builder.HasOne<Product>()
+            //    .WithMany()
+            //    .HasPrincipalKey(m => m.Id)
+            //    .HasForeignKey(m => m.ProductId);
+
+            builder.HasMany(c => c.Product)
+                .WithMany(c => c.Category);
+                
+
         }
     }
 }

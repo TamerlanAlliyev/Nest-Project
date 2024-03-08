@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Nest.Migrations
 {
-    public partial class Models_Configurations : Migration
+    public partial class Models : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,7 +17,6 @@ namespace Nest.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Icon = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreateBy = table.Column<int>(type: "int", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -90,7 +89,6 @@ namespace Nest.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SellPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     DiscountPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
-                    CategoryId = table.Column<int>(type: "int", nullable: false),
                     VendorId = table.Column<int>(type: "int", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreateBy = table.Column<int>(type: "int", nullable: false),

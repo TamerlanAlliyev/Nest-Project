@@ -22,13 +22,32 @@ namespace Nest.Data.Configurations
             builder.HasKey(x => x.Id);
             builder.ToTable("Products");
 
-            //builder.HasOne<Category>() 
-            //    .WithOne()
-            //    .HasForeignKey<Product>(m => m.CategoryId);
+            builder.HasMany(p=>p.Category)
+                .WithMany(p=>p.Product);
 
-            builder.HasOne<Vendor>()
-                .WithOne()
-                .HasForeignKey<Product>(m => m.VendorId);
+            builder.HasOne(p => p.Vendor)
+                .WithMany(p=>p.Products)
+                .HasForeignKey(p=>p.VendorId);
+
+
+
+
+            builder.HasMany(p => p.ProductImages)
+                .WithOne(p=>p.Product);
+
+            builder.HasMany(p=>p.CustomerRatings)
+                .WithOne(p=>p.Product);
+
+            builder.HasMany(p=>p.SizeWeights)
+                .WithOne();
+
+            ////builder.HasOne<Category>() 
+            ////    .WithOne()
+            ////    .HasForeignKey<Product>(m => m.CategoryId);
+
+            //builder.HasOne<Vendor>()
+            //    .WithOne()
+            //    .HasForeignKey<Product>(m => m.VendorId);
 
         }
     }

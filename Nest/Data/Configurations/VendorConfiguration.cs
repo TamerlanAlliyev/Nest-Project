@@ -22,6 +22,9 @@ namespace Nest.Data.Configurations
 
             builder.HasKey(m=>m.Id);
             builder.ToTable("Vendors");
+
+            builder.HasMany(v => v.Products)
+                .WithOne(v=>v.Vendor);
         }
     }
 }
