@@ -17,12 +17,10 @@ namespace Nest.Data.Configurations
             builder.Property(m=>m.Password).HasColumnType("varchar(70)").IsRequired();
             builder.Property(m=>m.DateOfBirth).HasColumnType("datetime").IsRequired();
             builder.Property(m=>m.LivingAddress).HasColumnType("varchar(50)").IsRequired();
-            builder.Property(m=>m.IpAddress).HasColumnType("varchar(150)").IsRequired();
             builder.Property(m=>m.PhoneNumber).HasColumnType("varchar(20)").IsRequired();
-            builder.Property(m=>m.Image).HasColumnType("varchar(500)").IsRequired();
+            builder.Property(m => m.Image).HasColumnType("varchar(max)");
 
-
-            builder.HasKey(x => x.Id);
+            builder.HasKey(m => m.Id);
             builder.ToTable("Customers");
 
 

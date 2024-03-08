@@ -19,12 +19,12 @@ namespace Nest.Data.Configurations
             builder.HasKey(m=>m.Id);
             builder.ToTable("CustomersRatings");
 
-            builder.HasOne<CustomerRating>()
+            builder.HasOne<Customer>()
                  .WithMany()
                  .HasPrincipalKey(m => m.Id)
                  .HasForeignKey(m => m.CustomerId);
 
-            builder.HasOne<CustomerRating>()
+            builder.HasOne<Product>()
                  .WithMany()
                  .HasPrincipalKey(m => m.Id)
                  .HasForeignKey(m => m.ProductId);
