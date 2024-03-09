@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Nest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4a8edff5b2d743076ec20e0b2293493b426d15c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a6d2dcfcf5987306bf0e253cd6f3a4f201c88ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Nest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Nest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
