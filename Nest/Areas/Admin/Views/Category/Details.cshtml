@@ -1,0 +1,75 @@
+﻿@model Category
+
+<div class="container mt-5" method="post">
+            <h1 class="card-title mb-5">Detail</h1>
+    <div class="card">
+        <div class="card-body mt-5 ml-5 ">
+            <div class="row">
+               
+                <div class="col-lg-10 col-md-2 col-sm-10 ml-3 mr-3">
+
+                    <div class="d-flex justify-content-center align-items-center">
+
+                        <div class="mr-5">
+                            <h3 class="box-title mb-4">@Model.Name</h3>
+                            <td class="text-center">
+                                <a asp-area="Admin" asp-controller="Category" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-sm btn-warning">Edit</a>
+                            </td>
+                            <td class="text-center">
+                                <a asp-area="Admin" asp-controller="Category" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-danger">Remove</a>
+                            </td>
+                        </div>
+
+
+                        <div>
+                            <div class="col-lg-2 " style="width:90px;">
+                                <div class="white-box text-center " style="width:90px;">
+                                    <img src="~/admin/icons/categories/@Model.Icon" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+              
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h3 class="box-title mt-5">General Info</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-product">
+                            <tbody>
+
+                                <tr>
+                                    <td width="390">Number of Products in a Category</td>
+                                    <td>@Model.Product.Count()</td>
+                                </tr>
+                                <tr>
+                                    <td width="390">Creat by</td>
+                                    <td>@Model.CreateBy</td>
+                                </tr>
+                                <tr>
+                                    <td width="390">Created date</td>
+                                    <td>@Model.Created</td>
+                                </tr>
+                                <tr>
+                                    <td width="390">Modified by</td>
+                                    <td>@Model.ModifiedBy</td>
+                                </tr>
+                                <tr>
+                                    <td width="390">Modified date</td>
+                                    <td>@Model.Modified</td>
+                                </tr>
+                                <tr>
+                                    <td width="390">IP Address</td>
+                                    <td>@Model.IPAddress</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
