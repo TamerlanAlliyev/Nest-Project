@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|c:\\users\\rog\\desktop\\tamerlan\\code academy\\back-end\\3.asp.net mvc\\1.projects\\nest-github\\nest-project\\nest\\areas\\admin\\views\\category\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|solutionrelative:nest\\areas\\admin\\views\\category\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|c:\\users\\rog\\desktop\\tamerlan\\code academy\\back-end\\3.asp.net mvc\\1.projects\\nest-github\\nest-project\\nest\\areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|solutionrelative:nest\\areas\\admin\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|c:\\users\\rog\\desktop\\tamerlan\\code academy\\back-end\\3.asp.net mvc\\1.projects\\nest-github\\nest-project\\nest\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|solutionrelative:nest\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|c:\\users\\rog\\desktop\\tamerlan\\code academy\\back-end\\3.asp.net mvc\\1.projects\\nest-github\\nest-project\\nest\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|solutionrelative:nest\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|c:\\users\\rog\\desktop\\tamerlan\\code academy\\back-end\\3.asp.net mvc\\1.projects\\nest-github\\nest-project\\nest\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|solutionrelative:nest\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|c:\\users\\rog\\desktop\\tamerlan\\code academy\\back-end\\3.asp.net mvc\\1.projects\\nest-github\\nest-project\\nest\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|solutionrelative:nest\\areas\\admin\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|c:\\users\\rog\\desktop\\tamerlan\\code academy\\back-end\\3.asp.net mvc\\1.projects\\nest-github\\nest-project\\nest\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|solutionrelative:nest\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|c:\\users\\rog\\desktop\\tamerlan\\code academy\\back-end\\3.asp.net mvc\\1.projects\\nest-github\\nest-project\\nest\\areas\\admin\\viewmodels\\productvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|solutionrelative:nest\\areas\\admin\\viewmodels\\productvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|c:\\users\\rog\\desktop\\tamerlan\\code academy\\back-end\\3.asp.net mvc\\1.projects\\nest-github\\nest-project\\nest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|solutionrelative:nest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|c:\\users\\rog\\desktop\\tamerlan\\code academy\\back-end\\3.asp.net mvc\\1.projects\\nest-github\\nest-project\\nest\\areas\\admin\\views\\category\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DACC145E-2823-4A14-A476-69504671C864}|Nest\\Nest.csproj|solutionrelative:nest\\areas\\admin\\views\\category\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 191,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,7 +58,93 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Nest\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Nest\\Areas\\Admin\\Views\\_ViewImports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T08:18:39.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductVM.cs",
+              "DocumentMoniker": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Areas\\Admin\\ViewModels\\ProductVM.cs",
+              "RelativeDocumentMoniker": "Nest\\Areas\\Admin\\ViewModels\\ProductVM.cs",
+              "ToolTip": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Areas\\Admin\\ViewModels\\ProductVM.cs",
+              "RelativeToolTip": "Nest\\Areas\\Admin\\ViewModels\\ProductVM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T06:48:49.033Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "RelativeDocumentMoniker": "Nest\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "RelativeToolTip": "Nest\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAEIAAABvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T06:32:21.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "Nest\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "Nest\\Areas\\Admin\\Views\\Product\\Index.cshtml",
+              "ViewState": "AQIAACMAAAAAAAAAAAAuwCkAAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T06:20:05.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Nest\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Nest\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAswBcAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T06:19:46.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Nest\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Nest\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAEUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T06:06:38.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Nest\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Nest\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAwwGQAAABYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-10T06:04:43.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Update.cshtml",
               "DocumentMoniker": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Areas\\Admin\\Views\\Category\\Update.cshtml",
               "RelativeDocumentMoniker": "Nest\\Areas\\Admin\\Views\\Category\\Update.cshtml",
@@ -38,18 +152,17 @@
               "RelativeToolTip": "Nest\\Areas\\Admin\\Views\\Category\\Update.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-09T19:22:35.407Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-09T19:22:35.407Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Areas\\Admin\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "Nest\\Areas\\Admin\\Controllers\\CategoryController.cs",
               "ToolTip": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Areas\\Admin\\Controllers\\CategoryController.cs",
               "RelativeToolTip": "Nest\\Areas\\Admin\\Controllers\\CategoryController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAANAAAA",
+              "ViewState": "AQIAAKkAAAAAAAAAAAAQwMQAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-09T19:20:12.764Z"
             }

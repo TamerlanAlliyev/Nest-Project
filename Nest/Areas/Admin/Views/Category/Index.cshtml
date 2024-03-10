@@ -43,7 +43,7 @@
                                         <td class="d-flex align-items-center justify-content-center"><img style="width:50px;" src="~/admin/icons/categories/@category.Icon" /></td>
                                         <td class="align-items-center">@category.Name</td>
                                         <td class="align-items-center">
-                                            <a asp-area="Admin" asp-controller="Category" asp-action="Details" asp-route-id="@category.Id" class="btn btn-sm btn-primary">Detail</a>
+                                            <a asp-area="Admin" asp-controller="Category" asp-action="Details" asp-route-id="@category.Id" class="btn btn-sm btn-primary">Details</a>
                                         </td>
                                         <td class="align-items-center">
                                             <a asp-area="Admin" asp-controller="Category" asp-action="Update" asp-route-id="@category.Id" class="btn btn-sm btn-warning">Edit</a>
@@ -53,7 +53,7 @@
                                         </td>
                                     </tr>
                                 }
-                              
+
 
                             </tbody>
                         </table>
@@ -62,8 +62,14 @@
             </div>
         </div>
     </div>
+    <div class="d-flex justify-content-center align-items-center flex-column text-center" >
+        <h5>Create new Category</h5>
+        <a class="btn btn-success mt-3 mb-5 w-25" asp-area="Admin" asp-controller="Category" asp-action="Create" >Get</a>
+    </div>
 
 </div>
+
+
 
 @section CategoryScript {
     <script src="~/admin/vendor/jquery/jquery.min.js"></script>

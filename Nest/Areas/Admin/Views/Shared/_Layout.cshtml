@@ -56,22 +56,37 @@
                 Interface
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="~/admin/#" data-toggle="collapse" data-target="#collapseTwo"
-                   aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="~/admin/#category" data-toggle="collapse" data-target="#collapseCategory" aria-expanded="true" aria-controls="collapseCategory">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Category</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseCategory" class="collapse" aria-labelledby="headingCategory" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
                         <a class="collapse-item" asp-controller="Category" asp-action="Index">Category List</a>
                         <a class="collapse-item" asp-controller="Category" asp-action="Create">Category Create</a>
-                        <a class="collapse-item" asp-controller="Category" asp-action="DeletedList">Deleted Categories List</a>
+                        <a class="collapse-item" asp-controller="Category" asp-action="DeletedList">Deleted Category List</a>
+
                     </div>
                 </div>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="~/admin/#product" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="false" aria-controls="collapseProduct">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Product</span>
+                </a>
+                <div id="collapseProduct" class="collapse" aria-labelledby="headingProduct" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Components:</h6>
+                        <a class="collapse-item" asp-controller="Product" asp-action="Index">Product List</a>
+                        <a class="collapse-item" asp-controller="Product" asp-action="Create">Product Create</a>
+                        <a class="collapse-item" asp-controller="Product" asp-action="DeletedList">Deleted Product List</a>
+                    </div>
+                </div>
+            </li>
+
 
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>

@@ -1,0 +1,104 @@
+﻿@model ProductVM
+
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800 mt-3">Catagories</h1>
+    <p class="mb-4">
+    </p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Categories Example</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    <div class="col-sm-12">
+                        <table class="table table-bordered table-hover  dataTable align-text-center" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                            <thead>
+
+                                <tr role="row " style="text-align:center;">
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 150px;">Image</th>
+                                    <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 223.333px;  text-align:center;">Name</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Description</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Sell Price</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Discount Price</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Vendor By</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">SizeWeights</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Rating</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Details</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Edit</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Remove</th>
+                            </thead>
+                            <tfoot>
+                                <tr style="text-align:center;">
+                                    <th rowspan="1" colspan="1">Image</th>
+                                    <th rowspan="1" colspan="1">Name</th>
+                                    <th rowspan="1" colspan="1">Descripton</th>
+                                    <th rowspan="1" colspan="1">Sell Price</th>
+                                    <th rowspan="1" colspan="1">Discount Price</th>
+                                    <th rowspan="1" colspan="1">Vendor By</th>
+                                    <th rowspan="1" colspan="1">SizeWeights</th>
+                                    <th rowspan="1" colspan="1">Rating</th>
+                                    <th rowspan="1" colspan="1">Details</th>
+                                    <th rowspan="1" colspan="1">Edit</th>
+                                    <th rowspan="1" colspan="1">Remove</th>
+                            </tfoot>
+                            <tbody>
+                                
+                                @foreach (Product product in Model.Products)
+                                {
+                                    
+                                    <tr class="even  align-items-center">
+                                        @* <td class="d-flex align-items-center justify-content-center"><img style="width:50px;" src="~/cilent/imgs/products/@product.ProductImages" /></td> *@
+                                        <td class="d-flex align-items-center justify-content-center">
+                                            <img style="width:50px;" src="~/cilent/imgs/products/@product.ProductImages.FirstOrDefault()?.Url" alt="Product Image" />
+                                        </td>
+                                        <td class="align-items-center">@product.Name</td>
+                                        <td class="align-items-center">@product.Description</td>
+                                        <td class="align-items-center">@product.SellPrice</td>
+                                        <td class="align-items-center">@product.DiscountPrice</td>
+                                        <td class="align-items-center">@product.Vendor.FullName</td>
+                                        <td class="align-items-center">@product.SizeWeights.FirstOrDefault()?.Weight</td>
+                                        <td class="align-items-center">Rating</td>
+
+
+
+
+
+                                        <td class="align-items-center">
+                                            <a asp-area="Admin" asp-controller="Category" asp-action="Details" asp-route-id="@product.Id" class="btn btn-sm btn-primary">Detail</a>
+                                        </td>
+                                        <td class="align-items-center">
+                                            <a asp-area="Admin" asp-controller="Category" asp-action="Update" asp-route-id="@product.Id" class="btn btn-sm btn-warning">Edit</a>
+                                        </td>
+                                        <td class="align-items-center">
+                                            <a asp-area="Admin" asp-controller="Category" asp-action="Delete" asp-route-id="@product.Id" class="btn btn-sm btn-danger">Remove</a>
+                                        </td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section CategoryScript {
+    <script src="~/admin/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="~/admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/admin/js/demo/datatables-demo.js"></script>
+}
