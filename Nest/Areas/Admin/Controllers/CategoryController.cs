@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Nest.Data;
 using Nest.Models;
+using YourNamespace.Extensions;
 
 namespace Nest.Areas.Admin.Controllers
 {
@@ -18,13 +19,13 @@ namespace Nest.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var list = await _context.Categories.Where(c => !c.IsDeleted).ToListAsync();
+            var list = await _context.Categories.Where(c => !c.IsDeleted).AsNoTracking().ToListAsync();
             return View(list);
         }
 
         public async Task<IActionResult> Details(int id)
         {
-            var list = await _context.Categories.Include(c => c.Product).Where(c => !c.IsDeleted && c.Id == id).FirstOrDefaultAsync();
+            var list = await _context.Categories.Include(c => c.Product).Where(c => !c.IsDeleted && c.Id == id).AsNoTracking().FirstOrDefaultAsync();
             if (list == null)
             {
                 return NotFound();
@@ -56,6 +57,23 @@ namespace Nest.Areas.Admin.Controllers
             return RedirectToAction(nameof(DeletedList));
         }
 
+        [HttpPost]
+        public async Task<IActionResult> HardDeleted(int id)
+        {
+            var category = await _context.Categories.FindAsync(id);
+            if (category != null)
+            {
+                string path = Path.Combine(_environment.WebRootPath, "admin", "icons", "categories",category.Icon);
+                if (System.IO.File.Exists(path))
+                {
+                    System.IO.File.Delete(path);
+                }
+                _context.Categories.Remove(category);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(DeletedList));
+        }
+
 
         public IActionResult Create()
         {
@@ -75,10 +93,7 @@ namespace Nest.Areas.Admin.Controllers
                     }
                 }
             }
-            //if (!ModelState.IsValid)
-            //{
-            //    return View(category);
-            //}
+
 
             if (category.FormFile == null)
             {
@@ -86,13 +101,13 @@ namespace Nest.Areas.Admin.Controllers
                 return View(category);
             }
 
-            if (!category.FormFile.ContentType.StartsWith("image/"))
+            if (!category.FormFile.FileTypeAsync("image/"))
             {
                 ModelState.AddModelError("FormFile", "Wrong file type");
                 return View(category);
             }
 
-            if (category.FormFile.Length > 2 * 1024 * 1024)
+            if (category.FormFile.FileSize(2))
             {
                 ModelState.AddModelError("FormFile", "File max size is 2mb");
                 return View(category);
@@ -104,14 +119,9 @@ namespace Nest.Areas.Admin.Controllers
                 return BadRequest("IP address is not available.");
             }
 
-            string uniqueFileName = Guid.NewGuid().ToString() + "_" + category.FormFile.FileName;
-            string uploadFolder = Path.Combine(_environment.WebRootPath, "admin", "icons", "categories");
-            string filePath = Path.Combine(uploadFolder, uniqueFileName);
 
-            using (var fileStream = new FileStream(filePath, FileMode.Create))
-            {
-                await category.FormFile.CopyToAsync(fileStream);
-            }
+            string uploadFolder = Path.Combine(_environment.WebRootPath, "admin", "icons", "categories");
+            string uniqueFileName = await category.FormFile.SaveToAsync(uploadFolder);
 
             var IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
             var createBy = 1;
@@ -119,7 +129,7 @@ namespace Nest.Areas.Admin.Controllers
 
             var newCategory = new Category
             {
-                Name = category.Name,
+                Name = category.Name.Trim(),
                 Icon = uniqueFileName,
                 IPAddress = IpAddress,
                 CreateBy = createBy,
@@ -134,8 +144,6 @@ namespace Nest.Areas.Admin.Controllers
         }
 
 
-
-
         public async Task<IActionResult> Update(int id)
         {
             if (id < 1) return BadRequest();
@@ -147,16 +155,16 @@ namespace Nest.Areas.Admin.Controllers
         }
 
 
-
-
         [HttpPost]
         public async Task<IActionResult> Update(int id, Category category)
         {
-            if (id < 1) return BadRequest();
+            if (id < 1)
+                return BadRequest();
 
             var entity = await _context.Categories.FindAsync(id);
 
-            if (entity == null) return NotFound();
+            if (entity == null)
+                return NotFound();
 
             var IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
 
@@ -164,8 +172,9 @@ namespace Nest.Areas.Admin.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                   entity = await _context.Categories.FindAsync(id);
-                    if (entity == null) return NotFound();
+                    entity = await _context.Categories.FindAsync(id);
+                    if (entity == null)
+                        return NotFound();
 
                     return View(category);
                 }
@@ -173,31 +182,33 @@ namespace Nest.Areas.Admin.Controllers
 
             if (category.FormFile != null)
             {
-                if (!category.FormFile.ContentType.StartsWith("image/"))
+                if (!category.FormFile.FileTypeAsync("image/"))
                 {
                     ModelState.AddModelError("FormFile", "Wrong file type");
                     return View(category);
                 }
 
-                if (category.FormFile.Length > 2 * 1024 * 1024)
+                if (category.FormFile.FileSize(2))
                 {
                     ModelState.AddModelError("FormFile", "File max size is 2mb");
                     return View(category);
                 }
 
-                string uniqueFileName = Guid.NewGuid().ToString() + "_" + category.FormFile.FileName;
-                string uploadFolder = Path.Combine(_environment.WebRootPath, "admin", "icons", "categories");
-                string filePath = Path.Combine(uploadFolder, uniqueFileName);
-
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                if (!string.IsNullOrEmpty(entity.Icon))
                 {
-                    await category.FormFile.CopyToAsync(fileStream);
+                    var oldImagePath = Path.Combine(_environment.WebRootPath, "admin", "icons", "categories", entity.Icon);
+                    if (System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
                 }
 
+                string uploadFolder = Path.Combine(_environment.WebRootPath, "admin", "icons", "categories");
+                string uniqueFileName = await category.FormFile.SaveToAsync(uploadFolder);
                 entity.Icon = uniqueFileName;
             }
 
-            entity.Name = category.Name;
+            entity.Name = category.Name.Trim();
             entity.IPAddress = IpAddress;
             entity.ModifiedBy = 1;
             entity.Modified = DateTime.UtcNow;

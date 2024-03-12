@@ -15,14 +15,14 @@ namespace Nest.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Icon = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "varchar(100)", nullable: false),
+                    Icon = table.Column<string>(type: "varchar(200)", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreateBy = table.Column<int>(type: "int", nullable: false),
-                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Created = table.Column<DateTime>(type: "datetime", nullable: false),
                     ModifiedBy = table.Column<int>(type: "int", nullable: true),
-                    Modified = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IPAddress = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Modified = table.Column<DateTime>(type: "datetime", nullable: true),
+                    IPAddress = table.Column<string>(type: "varchar", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -35,19 +35,19 @@ namespace Nest.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MailAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LivingAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FullName = table.Column<string>(type: "varchar(50)", nullable: false),
+                    MailAddress = table.Column<string>(type: "varchar(150)", nullable: false),
+                    Password = table.Column<string>(type: "varchar(70)", nullable: false),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime", nullable: false),
+                    LivingAddress = table.Column<string>(type: "varchar(50)", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "varchar(20)", nullable: false),
+                    Image = table.Column<string>(type: "varchar(max)", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreateBy = table.Column<int>(type: "int", nullable: false),
-                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Created = table.Column<DateTime>(type: "datetime", nullable: false),
                     ModifiedBy = table.Column<int>(type: "int", nullable: true),
-                    Modified = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IPAddress = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Modified = table.Column<DateTime>(type: "datetime", nullable: true),
+                    IPAddress = table.Column<string>(type: "varchar", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -60,19 +60,19 @@ namespace Nest.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MailAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LivingAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FullName = table.Column<string>(type: "varchar(50)", nullable: false),
+                    MailAddress = table.Column<string>(type: "varchar(150)", nullable: false),
+                    Password = table.Column<string>(type: "varchar(70)", nullable: false),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime", nullable: false),
+                    LivingAddress = table.Column<string>(type: "varchar(50)", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "varchar(20)", nullable: false),
+                    Image = table.Column<string>(type: "varchar(max)", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreateBy = table.Column<int>(type: "int", nullable: false),
-                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Created = table.Column<DateTime>(type: "datetime", nullable: false),
                     ModifiedBy = table.Column<int>(type: "int", nullable: true),
-                    Modified = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IPAddress = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Modified = table.Column<DateTime>(type: "datetime", nullable: true),
+                    IPAddress = table.Column<string>(type: "varchar", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -85,17 +85,17 @@ namespace Nest.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SellPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    DiscountPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(150)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(350)", nullable: false),
+                    SellPrice = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    DiscountPrice = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     VendorId = table.Column<int>(type: "int", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreateBy = table.Column<int>(type: "int", nullable: false),
-                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Created = table.Column<DateTime>(type: "datetime", nullable: false),
                     ModifiedBy = table.Column<int>(type: "int", nullable: true),
-                    Modified = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IPAddress = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Modified = table.Column<DateTime>(type: "datetime", nullable: true),
+                    IPAddress = table.Column<string>(type: "varchar", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -133,33 +133,33 @@ namespace Nest.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CustomerRatings",
+                name: "CustomersRatings",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Evaluation = table.Column<int>(type: "int", nullable: false),
-                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Comment = table.Column<string>(type: "nvarchar(500)", nullable: false),
                     CustomerId = table.Column<int>(type: "int", nullable: false),
                     ProductId = table.Column<int>(type: "int", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreateBy = table.Column<int>(type: "int", nullable: false),
-                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Created = table.Column<DateTime>(type: "datetime", nullable: false),
                     ModifiedBy = table.Column<int>(type: "int", nullable: true),
-                    Modified = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IPAddress = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Modified = table.Column<DateTime>(type: "datetime", nullable: true),
+                    IPAddress = table.Column<string>(type: "varchar", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CustomerRatings", x => x.Id);
+                    table.PrimaryKey("PK_CustomersRatings", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CustomerRatings_Customers_CustomerId",
+                        name: "FK_CustomersRatings_Customers_CustomerId",
                         column: x => x.CustomerId,
                         principalTable: "Customers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CustomerRatings_Products_ProductId",
+                        name: "FK_CustomersRatings_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
@@ -172,15 +172,15 @@ namespace Nest.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Url = table.Column<string>(type: "varchar(250)", nullable: false),
                     IsMain = table.Column<bool>(type: "bit", nullable: true),
                     ProductId = table.Column<int>(type: "int", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreateBy = table.Column<int>(type: "int", nullable: false),
-                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Created = table.Column<DateTime>(type: "datetime", nullable: false),
                     ModifiedBy = table.Column<int>(type: "int", nullable: true),
-                    Modified = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IPAddress = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Modified = table.Column<DateTime>(type: "datetime", nullable: true),
+                    IPAddress = table.Column<string>(type: "varchar", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -194,15 +194,13 @@ namespace Nest.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SizeWeights",
+                name: "Sizes",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Weight = table.Column<int>(type: "int", nullable: false),
-                    WeightCount = table.Column<int>(type: "int", nullable: false),
-                    Size = table.Column<int>(type: "int", nullable: false),
-                    SizeCount = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Count = table.Column<int>(type: "int", nullable: false),
                     ProductId = table.Column<int>(type: "int", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreateBy = table.Column<int>(type: "int", nullable: false),
@@ -213,9 +211,36 @@ namespace Nest.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SizeWeights", x => x.Id);
+                    table.PrimaryKey("PK_Sizes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SizeWeights_Products_ProductId",
+                        name: "FK_Sizes_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Weights",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Gram = table.Column<int>(type: "int", nullable: false),
+                    Count = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    CreateBy = table.Column<int>(type: "int", nullable: false),
+                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedBy = table.Column<int>(type: "int", nullable: true),
+                    Modified = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IPAddress = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Weights", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Weights_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
@@ -228,13 +253,13 @@ namespace Nest.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CustomerRatings_CustomerId",
-                table: "CustomerRatings",
+                name: "IX_CustomersRatings_CustomerId",
+                table: "CustomersRatings",
                 column: "CustomerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CustomerRatings_ProductId",
-                table: "CustomerRatings",
+                name: "IX_CustomersRatings_ProductId",
+                table: "CustomersRatings",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
@@ -248,8 +273,13 @@ namespace Nest.Migrations
                 column: "VendorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SizeWeights_ProductId",
-                table: "SizeWeights",
+                name: "IX_Sizes_ProductId",
+                table: "Sizes",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Weights_ProductId",
+                table: "Weights",
                 column: "ProductId");
         }
 
@@ -259,13 +289,16 @@ namespace Nest.Migrations
                 name: "CategoryProduct");
 
             migrationBuilder.DropTable(
-                name: "CustomerRatings");
+                name: "CustomersRatings");
 
             migrationBuilder.DropTable(
                 name: "ProductImages");
 
             migrationBuilder.DropTable(
-                name: "SizeWeights");
+                name: "Sizes");
+
+            migrationBuilder.DropTable(
+                name: "Weights");
 
             migrationBuilder.DropTable(
                 name: "Categories");

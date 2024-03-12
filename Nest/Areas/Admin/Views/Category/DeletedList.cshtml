@@ -24,12 +24,14 @@
                                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Icon</th>
                                     <th class="sorting sorting_asc text-align:center;" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 90%;">Name</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Return</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Delete</th>
                             </thead>
                             <tfoot>
                                 <tr style="text-align:center;">
                                     <th rowspan="1" colspan="1">Icon</th>
                                     <th rowspan="1" colspan="1">Name</th>
                                     <th rowspan="1" colspan="1">Return</th>
+                                    <th rowspan="1" colspan="1">Delete</th>
                             </tfoot>
                             <tbody>
 
@@ -43,6 +45,14 @@
                                                 @* <input type="hidden" name="id" value="@category.Id" /> *@
                                                 <button type="submit" class="btn btn-sm btn-success">Return</button>
                                             </form>
+                                        </td>
+                                        <td class="align-items-center">
+                                            <form asp-area="Admin" asp-controller="Category" asp-action="HardDeleted" asp-route-id="@category.Id" method="post">
+                                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+
+                                            </form>
+
+
                                         </td>
                                     </tr>
                                 }

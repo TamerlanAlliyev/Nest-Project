@@ -14,7 +14,7 @@ namespace Nest.Data.Configurations.BaseConfigurations
             builder.Property(m => m.ModifiedBy).HasColumnType("int");
             builder.Property(m => m.Modified).HasColumnType("datetime");
             builder.Property(m => m.IsDeleted).HasColumnType("bit").IsRequired();
-            builder.Property(m => m.IPAddress).HasColumnType("varchar").IsRequired();
+            builder.Property(m => m.IPAddress).HasColumnType("varchar(100)").IsRequired();
         }
     }
 }

@@ -21,14 +21,15 @@
                             <thead>
 
                                 <tr role="row " style="text-align:center;">
-                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 150px;">Image</th>
-                                    <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 223.333px;  text-align:center;">Name</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Description</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Sell Price</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Discount Price</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Vendor By</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">SizeWeights</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Rating</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 100px;">Image</th>
+                                    @* <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 223.333px;  text-align:center;">Name</th> *@
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 150px;">Name</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 250px;">Description</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 150px;">Vendor By</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 80px;">Sell Price</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 80px;">Discount Price</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Discount Rate</th>
+                                    @* <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Rating</th> *@
                                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Details</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Edit</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Remove</th>
@@ -40,49 +41,39 @@
                                     <th rowspan="1" colspan="1">Descripton</th>
                                     <th rowspan="1" colspan="1">Sell Price</th>
                                     <th rowspan="1" colspan="1">Discount Price</th>
+                                    <th rowspan="1" colspan="1">Discount Rate</th>
                                     <th rowspan="1" colspan="1">Vendor By</th>
-                                    <th rowspan="1" colspan="1">SizeWeights</th>
-                                    <th rowspan="1" colspan="1">Rating</th>
+                                    @* <th rowspan="1" colspan="1">Rating</th> *@
                                     <th rowspan="1" colspan="1">Details</th>
                                     <th rowspan="1" colspan="1">Edit</th>
                                     <th rowspan="1" colspan="1">Remove</th>
                             </tfoot>
-                            <tbody>
+                            <tbody style="text-align:center;">
                                 
                                 @foreach (Product product in Model.Products)
                                 {
-                                    
-                                    <tr class="even  align-items-center">
-                                        @* <td class="d-flex align-items-center justify-content-center"><img style="width:50px;" src="~/cilent/imgs/products/@product.ProductImages" /></td> *@
-                                        <td class="d-flex align-items-center justify-content-center">
-                                            <img style="width:50px;" src="~/cilent/imgs/products/@product.ProductImages.FirstOrDefault()?.Url" alt="Product Image" />
+                                    <tr  class="even  align-items-center" >
+                                        <td class="d-flex align-items-center justify-content-center" style="vertical-align: middle;">
+                                            <img class="d-flex align-items-center justify-content-center" style="max-width:50px; vertical-align: middle" src="~/cilent/imgs/products/@product.ProductImages.FirstOrDefault()?.Url" alt="Product Image" />
                                         </td>
-                                        <td class="align-items-center">@product.Name</td>
-                                        <td class="align-items-center">@product.Description</td>
-                                        <td class="align-items-center">@product.SellPrice</td>
-                                        <td class="align-items-center">@product.DiscountPrice</td>
-                                        <td class="align-items-center">@product.Vendor.FullName</td>
-                                        <td class="align-items-center">@product.SizeWeights.FirstOrDefault()?.Weight</td>
-                                        <td class="align-items-center">Rating</td>
-
-
-
-
-
-                                        <td class="align-items-center">
-                                            <a asp-area="Admin" asp-controller="Category" asp-action="Details" asp-route-id="@product.Id" class="btn btn-sm btn-primary">Detail</a>
+                                        <td style="vertical-align: middle;" class="align-items-center">@product.Name</td>
+                                        <td style="vertical-align: middle;" class="align-items-center">@product.Description</td>
+                                        <td style="vertical-align: middle;" class="align-items-center">@product.Vendor.FullName</td>
+                                        <td style="vertical-align: middle;" class="align-items-center">@product.SellPrice</td>
+                                        <td style="vertical-align: middle;" class="align-items-center">@product.DiscountPrice</td>
+                                        <td style="vertical-align: middle;" class="align-items-center">@((product.SellPrice - product.DiscountPrice)/20*100)%</td>
+                                        <td style="vertical-align: middle;" class="align-items-center">
+                                            <a asp-area="Admin" asp-controller="Product" asp-action="Details" asp-route-id="@product.Id" class="btn btn-sm btn-primary">Detail</a>
                                         </td>
-                                        <td class="align-items-center">
-                                            <a asp-area="Admin" asp-controller="Category" asp-action="Update" asp-route-id="@product.Id" class="btn btn-sm btn-warning">Edit</a>
+                                        <td style="vertical-align: middle;" class="align-items-center">
+                                            <a asp-area="Admin" asp-controller="Product" asp-action="Update" asp-route-id="@product.Id" class="btn btn-sm btn-warning">Edit</a>
                                         </td>
-                                        <td class="align-items-center">
-                                            <a asp-area="Admin" asp-controller="Category" asp-action="Delete" asp-route-id="@product.Id" class="btn btn-sm btn-danger">Remove</a>
+                                        <td style="vertical-align: middle;" class="align-items-center">
+                                            <a asp-area="Admin" asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id" class="btn btn-sm btn-danger">Remove</a>
                                         </td>
                                     </tr>
                                 }
 
-
-                            </tbody>
                         </table>
                     </div>
                 </div>

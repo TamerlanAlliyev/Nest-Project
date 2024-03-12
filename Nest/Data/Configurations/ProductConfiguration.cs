@@ -16,39 +16,32 @@ namespace Nest.Data.Configurations
             builder.Property(m => m.Description).HasColumnType("nvarchar(350)").IsRequired();
             builder.Property(m => m.SellPrice).HasPrecision(18, 2).IsRequired();
             builder.Property(m => m.DiscountPrice).HasPrecision(18, 2).IsRequired();
-            //builder.Property(m => m.CategoryId).HasColumnType("int").IsRequired();
-            builder.Property(m => m.Vendor).HasColumnType("int").IsRequired();
 
             builder.HasKey(x => x.Id);
             builder.ToTable("Products");
 
-            builder.HasMany(p=>p.Category)
-                .WithMany(p=>p.Product);
+            builder.HasMany(p => p.Category)
+                .WithMany(p => p.Product);
 
             builder.HasOne(p => p.Vendor)
-                .WithMany(p=>p.Products)
-                .HasForeignKey(p=>p.VendorId);
-
-
-
+                .WithMany(p => p.Products)
+                .HasForeignKey(p => p.VendorId);
 
             builder.HasMany(p => p.ProductImages)
-                .WithOne(p=>p.Product);
+                .WithOne(p => p.Product)
+                .HasForeignKey(p => p.ProductId);
 
-            builder.HasMany(p=>p.CustomerRatings)
-                .WithOne(p=>p.Product);
+            builder.HasMany(p => p.CustomerRatings)
+                .WithOne(p => p.Product)
+                .HasForeignKey(p => p.ProductId);
 
-            builder.HasMany(p=>p.SizeWeights)
-                .WithOne();
+            builder.HasMany(p => p.Sizes)
+                .WithOne(p=>p.Product) // No navigation property
+                .HasForeignKey(p => p.ProductId); // Foreign key property
 
-            ////builder.HasOne<Category>() 
-            ////    .WithOne()
-            ////    .HasForeignKey<Product>(m => m.CategoryId);
-
-            //builder.HasOne<Vendor>()
-            //    .WithOne()
-            //    .HasForeignKey<Product>(m => m.VendorId);
-
+            builder.HasMany(p => p.Weights)
+                .WithOne(p=>p.Product) // No navigation property
+                .HasForeignKey(p => p.ProductId); // Foreign key property
         }
     }
 }
