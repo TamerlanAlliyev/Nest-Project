@@ -109,7 +109,7 @@
                             <div class="product-cart-wrap mb-30">
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
+                                        <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
 
                                             @foreach (ProductImage image in product.ProductImages)
                                             {
@@ -138,7 +138,7 @@
                                             <a href="shop-grid-right.html">@category.Name</a>
                                         }
                                     </div>
-                                    <h2><a href="shop-product-right.html">@product.Name</a></h2>
+                                    <h2><a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">@product.Name</a></h2>
                                     <div class="product-rate-cover">
                                         <div class="product-rate d-inline-block">
                                             <div class="product-rating" style="width: @(product.CustomerRatings.Count() == 0 ? 0 : (totalEvaluation / (decimal)product.CustomerRatings.Count() / 5 * 100))%"></div>

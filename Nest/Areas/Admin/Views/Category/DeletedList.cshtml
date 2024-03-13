@@ -47,8 +47,8 @@
                                             </form>
                                         </td>
                                         <td class="align-items-center">
-                                            <form asp-area="Admin" asp-controller="Category" asp-action="HardDeleted" asp-route-id="@category.Id" method="post">
-                                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                            <form  method="post">
+                                                <button type="submit" data-id="@category.Id" class="btn btn-sm btn-danger deleteBtn">Delete</button>
 
                                             </form>
 
@@ -68,6 +68,71 @@
 </div>
 
 @section CategoryScript {
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-success",
+                cancelButton: "btn btn-danger"
+            },
+            buttonsStyling: false
+        });
+
+        const deleteBtns = document.querySelectorAll(".deleteBtn");
+
+        deleteBtns.forEach(btn => {
+            btn.addEventListener("click", async (e) => {
+                e.preventDefault(); // Prevent default form submission
+
+                const categoryId = btn.dataset.id;
+
+                const confirmDelete = await swalWithBootstrapButtons.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "No, cancel!",
+                    reverseButtons: true
+                });
+
+                if (confirmDelete.isConfirmed) {
+                    $.ajax({
+                        type: "POST",
+                        url: `/Admin/Category/HardDeleted/${categoryId}`, // Use correct URL
+                        success: (response) => {
+                            if (response.success) {
+                                // Remove the row from the table
+                                btn.closest("tr").remove();
+
+                                swalWithBootstrapButtons.fire({
+                                    title: "Deleted!",
+                                    text: response.message,
+                                    icon: "success"
+                                });
+                            } else {
+                                swalWithBootstrapButtons.fire({
+                                    title: "Error!",
+                                    text: response.message,
+                                    icon: "error"
+                                });
+                            }
+                        },
+                        error: (error) => {
+                            console.error(error);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    </script>
+    </script>
+
+
     <script src="~/admin/vendor/jquery/jquery.min.js"></script>
 
     <!-- Page level plugins -->

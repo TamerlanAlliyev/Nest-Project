@@ -33,12 +33,27 @@ namespace Nest.Areas.Admin.Controllers
             return View(list);
         }
 
-        public IActionResult Delete(int id)
+        //public IActionResult Delete(int id)
+        //{
+        //    var category = _context.Categories.Where(c => c.Id == id && !c.IsDeleted).FirstOrDefault();
+        //    category.IsDeleted = true;
+        //    _context.SaveChanges();
+        //    return RedirectToAction(nameof(Index));
+        //}
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
         {
+            if (id < 1) return BadRequest();
+
             var category = _context.Categories.Where(c => c.Id == id && !c.IsDeleted).FirstOrDefault();
+
+            if (category == null) return NotFound();
+
             category.IsDeleted = true;
             _context.SaveChanges();
-            return RedirectToAction(nameof(Index));
+
+            return Ok(new { success = true, message = "Category deleted successfully." });
         }
 
 
@@ -57,13 +72,34 @@ namespace Nest.Areas.Admin.Controllers
             return RedirectToAction(nameof(DeletedList));
         }
 
+
+
+        //[HttpPost]
+        //public async Task<IActionResult> HardDeleted(int id)
+        //{
+        //    var category = await _context.Categories.FindAsync(id);
+        //    if (category != null)
+        //    {
+        //        string path = Path.Combine(_environment.WebRootPath, "admin", "icons", "categories",category.Icon);
+        //        if (System.IO.File.Exists(path))
+        //        {
+        //            System.IO.File.Delete(path);
+        //        }
+        //        _context.Categories.Remove(category);
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    return RedirectToAction(nameof(DeletedList));
+        //}
+
         [HttpPost]
         public async Task<IActionResult> HardDeleted(int id)
         {
+            if (id < 1) return BadRequest();
+
             var category = await _context.Categories.FindAsync(id);
             if (category != null)
             {
-                string path = Path.Combine(_environment.WebRootPath, "admin", "icons", "categories",category.Icon);
+                string path = Path.Combine(_environment.WebRootPath, "admin", "icons", "categories", category.Icon);
                 if (System.IO.File.Exists(path))
                 {
                     System.IO.File.Delete(path);
@@ -71,8 +107,10 @@ namespace Nest.Areas.Admin.Controllers
                 _context.Categories.Remove(category);
                 await _context.SaveChangesAsync();
             }
-            return RedirectToAction(nameof(DeletedList));
+
+            return Ok(new { success = true, message = "Category deleted successfully." });
         }
+
 
 
         public IActionResult Create()

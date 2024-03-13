@@ -51,5 +51,45 @@ namespace Nest.Controllers
 
             return View(productVM);
         }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            ViewBag.QuickPartialView = true;
+            ViewBag.MobileHeaderPartialView = true;
+            ViewBag.PreloaderPartialView = true;
+
+            if (id < 0)
+            {
+                return BadRequest();    
+            }
+
+
+
+            Product? product = await _context.Products.Where(p => !p.IsDeleted )
+                                                                        .Include(p => p.Category)
+                                                                        .Include(p => p.Vendor)
+                                                                        .Include(p => p.CustomerRatings)
+                                                                        .Include(p => p.ProductImages)
+                                                                        .FirstOrDefaultAsync();
+
+            List<Category> categories = await _context.Categories
+                                  .Where(c => !c.IsDeleted)
+                                  .Include(c => c.Product)
+                                  .ToListAsync();
+            //if (product != null)
+            //{
+            //    return NotFound();
+            //}
+
+            ProductVM productVM = new ProductVM()
+            {
+                Product = product,
+                Categories= categories
+            };
+
+           
+
+            return View(productVM);
+        }
     }
 }

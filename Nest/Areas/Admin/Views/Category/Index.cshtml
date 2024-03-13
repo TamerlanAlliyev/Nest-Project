@@ -49,7 +49,8 @@
                                             <a asp-area="Admin" asp-controller="Category" asp-action="Update" asp-route-id="@category.Id" class="btn btn-sm btn-warning">Edit</a>
                                         </td>
                                         <td class="align-items-center">
-                                            <a asp-area="Admin" asp-controller="Category" asp-action="Delete" asp-route-id="@category.Id" class="btn btn-sm btn-danger">Remove</a>
+                                            @* <a asp-area="Admin" asp-controller="Category" asp-action="Delete" asp-route-id="@category.Id" class="btn btn-sm btn-danger deleteBtn">Remove</a> *@
+                                            <a data-id="@category.Id" class="btn btn-sm btn-danger deleteBtn">Remove</a>
                                         </td>
                                     </tr>
                                 }
@@ -62,9 +63,9 @@
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-center align-items-center flex-column text-center" >
+    <div class="d-flex justify-content-center align-items-center flex-column text-center">
         <h5>Create new Category</h5>
-        <a class="btn btn-success mt-3 mb-5 w-25" asp-area="Admin" asp-controller="Category" asp-action="Create" >Get</a>
+        <a class="btn btn-success mt-3 mb-5 w-25" asp-area="Admin" asp-controller="Category" asp-action="Create">Get</a>
     </div>
 
 </div>
@@ -72,6 +73,127 @@
 
 
 @section CategoryScript {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-success",
+                cancelButton: "btn btn-danger"
+            },
+            buttonsStyling: false
+        });
+
+        const deleteBtns = document.querySelectorAll(".deleteBtn");
+
+        deleteBtns.forEach(btn => {
+            btn.addEventListener("click", async (e) => {
+                e.preventDefault();
+
+                const categoryId = btn.dataset.id;
+
+                const confirmDelete = await swalWithBootstrapButtons.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "No, cancel!",
+                    reverseButtons: true
+                });
+
+                if (confirmDelete.isConfirmed) {
+                    $.ajax({
+                        type: "POST",
+                        url: `/Admin/Category/Delete/${categoryId}`,
+                        success: (response) => {
+                            if (response.success) {
+                                // Remove the row from the table
+                                btn.closest("tr").remove();
+
+                                swalWithBootstrapButtons.fire({
+                                    title: "Deleted!",
+                                    text: response.message,
+                                    icon: "success"
+                                });
+                            } else {
+                                swalWithBootstrapButtons.fire({
+                                    title: "Error!",
+                                    text: response.message,
+                                    icon: "error"
+                                });
+                            }
+                        },
+                        error: (error) => {
+                            console.error(error);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+@*     <script>
+
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-success",
+                cancelButton: "btn btn-danger"
+            },
+            buttonsStyling: false
+        });
+        const deleteBtn = document.querySelectorAll(".deleteBtn");
+        deleteBtn.forEach(x => {
+
+            deleteBtn.addEventListener("click", (e) => {
+                e.preventDefault()
+                swalWithBootstrapButtons.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "No, cancel!",
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        const categoryId = this.dataset.id;
+                        $.ajax({
+                            type: "Post",
+                            url: `Category/Delete/${categoryId}`,
+                            success: function (res) {
+                                $("#tbody").html(res);
+                            },
+                            error: function (err) {
+                                console.log(err)
+                            }
+                        })
+
+
+
+
+                        // swalWithBootstrapButtons.fire({
+                        //     title: "Deleted!",
+                        //     text: "Your file has been deleted.",
+                        //     icon: "success"
+                        // });
+                    }
+                    else if (
+                        result.dismiss === Swal.DismissReason.cancel
+                    ) {
+                        swalWithBootstrapButtons.fire({
+                            title: "Cancelled",
+                            text: "Your imaginary file is safe :)",
+                            icon: "error"
+                        });
+                    }
+                })
+            })
+        });
+    </script> *@
+
+
     <script src="~/admin/vendor/jquery/jquery.min.js"></script>
 
     <!-- Page level plugins -->
