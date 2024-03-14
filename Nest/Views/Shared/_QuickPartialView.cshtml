@@ -1,4 +1,9 @@
-﻿<div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+﻿@* @model ProductVM
+@{
+    var product = TempData["ProductImage"] as Product;
+} *@
+<!-- Quick view -->
+<div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -8,39 +13,34 @@
                         <div class="detail-gallery">
                             <span class="zoom-icon"><i class="fi-rs-search"></i></span>
                             <!-- MAIN SLIDES -->
-                            <div class="product-image-slider">
-                                <figure class="border-radius-10">
-                                    <img src="~/cilent/imgs/shop/product-16-2.jpg" alt="product image" />
-                                </figure>
-                                <figure class="border-radius-10">
-                                    <img src="~/cilent/imgs/shop/product-16-1.jpg" alt="product image" />
-                                </figure>
-                                <figure class="border-radius-10">
-                                    <img src="~/cilent/imgs/shop/product-16-3.jpg" alt="product image" />
-                                </figure>
-                                <figure class="border-radius-10">
-                                    <img src="~/cilent/imgs/shop/product-16-4.jpg" alt="product image" />
-                                </figure>
-                                <figure class="border-radius-10">
-                                    <img src="~/cilent/imgs/shop/product-16-5.jpg" alt="product image" />
-                                </figure>
-                                <figure class="border-radius-10">
-                                    <img src="~/cilent/imgs/shop/product-16-6.jpg" alt="product image" />
-                                </figure>
-                                <figure class="border-radius-10">
-                                    <img src="~/cilent/imgs/shop/product-16-7.jpg" alt="product image" />
-                                </figure>
+                            @* <div class="product-image-slider">
+                                @foreach (ProductImage image in product.ProductImages)
+                                {
+                                    if (image.IsMain == true)
+                                    {
+                                        <figure class="border-radius-10">
+                                            <img src="~/cilent/imgs/products/@image.Url" alt="@image.Url" />
+                                        </figure>
+                                    }
+                                    else
+                                    {
+                                        <figure class="border-radius-10">
+                                            <img src="~/cilent/imgs/products/@image.Url" alt="@image.Url" />
+                                        </figure>
+                                    }
+
+                                }
                             </div>
                             <!-- THUMBNAILS -->
                             <div class="slider-nav-thumbnails">
-                                <div><img src="~/cilent/imgs/shop/thumbnail-3.jpg" alt="product image" /></div>
-                                <div><img src="~/cilent/imgs/shop/thumbnail-4.jpg" alt="product image" /></div>
-                                <div><img src="~/cilent/imgs/shop/thumbnail-5.jpg" alt="product image" /></div>
-                                <div><img src="~/cilent/imgs/shop/thumbnail-6.jpg" alt="product image" /></div>
-                                <div><img src="~/cilent/imgs/shop/thumbnail-7.jpg" alt="product image" /></div>
-                                <div><img src="~/cilent/imgs/shop/thumbnail-8.jpg" alt="product image" /></div>
-                                <div><img src="~/cilent/imgs/shop/thumbnail-9.jpg" alt="product image" /></div>
+                                @foreach (ProductImage image in product.ProductImages)
+                                {
+                                    <div>
+                                        <img src="~/cilent/imgs/products/@image.Url" alt="@image.Url" />
+                                    </div>
+                                }
                             </div>
+                        *@
                         </div>
                         <!-- End Gallery -->
                     </div>

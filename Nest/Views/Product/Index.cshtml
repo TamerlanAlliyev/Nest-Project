@@ -116,9 +116,12 @@
                                             <img class="default-img" src="~/cilent/imgs/product/@image.Url" alt="" />
                                                 if (image.IsMain == true)
                                                 {
-                                                    <img class="default-img" src="~/cilent/imgs/products/@image.Url" alt="" />
+                                                    <img class="default-img" src="~/cilent/imgs/products/@image.Url" alt="@image.Url" />
                                                 }
-                                                <img class="hover-img" src="~/cilent/imgs/products/@image.Url" alt="" />
+                                                if (image.IsHover==true)
+                                                {
+                                                <img class="hover-img" src="~/cilent/imgs/products/@image.Url" alt="@image.Url" />
+                                                }
                                             }
                                         </a>
                                     </div>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o6G8CFCdZVqGGedGGQrUncYecJFq9lVKthfkSDD+kjjD5HJchWA259mBACIlvjqFgjhVRz22d47tSjEhlU/B4A==",
+  "dgSpecHash": "ZXG32XhZIj40jYNojz4NrSCifnqHSXgT9jQAtLCSO4XPBOmoyaCQBnVJerSAb10w2Tw2hX8O/v/b7N1ydpWd0Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\Nest-Github\\Nest-Project\\Nest\\Nest.csproj",
+  "projectFilePath": "C:\\Users\\ROG\\Desktop\\Tamerlan\\CODE ACADEMY\\BACK-END\\3.ASP.NET MVC\\1.Projects\\1.Nest\\New folder (2)\\Nest-Project\\Nest\\Nest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ROG\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\ROG\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

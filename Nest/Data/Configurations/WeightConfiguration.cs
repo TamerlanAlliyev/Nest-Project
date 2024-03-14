@@ -12,15 +12,12 @@ namespace Nest.Data.Configurations
             base.Configure(builder);
 
             builder.Property(w => w.Gram).HasColumnType("int").IsRequired();
-            builder.Property(w => w.Count).HasColumnType("int").IsRequired();
 
             builder.HasKey(m => m.Id);
             builder.ToTable("Weights");
 
 
-            builder.HasOne(sw => sw.Product)
-                .WithMany(sw => sw.Weights)
-                .HasForeignKey(sw => sw.ProductId);
+
 
         }
     }

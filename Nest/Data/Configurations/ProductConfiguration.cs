@@ -35,13 +35,8 @@ namespace Nest.Data.Configurations
                 .WithOne(p => p.Product)
                 .HasForeignKey(p => p.ProductId);
 
-            builder.HasMany(p => p.Sizes)
-                .WithOne(p=>p.Product) // No navigation property
-                .HasForeignKey(p => p.ProductId); // Foreign key property
 
-            builder.HasMany(p => p.Weights)
-                .WithOne(p=>p.Product) // No navigation property
-                .HasForeignKey(p => p.ProductId); // Foreign key property
+
         }
     }
 }

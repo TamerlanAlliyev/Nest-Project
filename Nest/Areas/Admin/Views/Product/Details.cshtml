@@ -1,13 +1,16 @@
 ﻿@model Product
-
+@{
+    int wCon = 1;
+    int sCon = 1;
+    int cCon = 1;
+}
 
 <div class="container mt-5" method="post">
-    <h1 class="card-title mb-5">Detail</h1>
-    <div class="card">
+    <div class="card mb-5">
         <div class="card-body mt-5 ml-5 ">
             <div class="row">
 
-                <div class="col-lg-10 col-md-2 col-sm-10 ml-3 mr-3">
+                <div class="col-lg-10 col-md-2 col-sm-10 ml-3 mr-3 mb-5">
 
                     <div class="d-flex justify-content-center align-items-center">
 
@@ -33,135 +36,221 @@
 
                 </div>
 
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <h3 class="box-title mt-5">General Info</h3>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-product">
-                            <tbody>
 
+                @foreach (ProductImage image in Model.ProductImages)
+                {
+                    <div class="card m-3" style="width: 8rem;">
+                        <img class="card-img-top" src="~/cilent/imgs/products/@image.Url" alt="@image.Url">
+                    </div>
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="table-responsive">
+                        <table style="font-weight:500;" class="table table-striped table-product">
+                            <tbody>
                                 <tr>
-                                    <td width="390">Number of Products in a Category</td>
-                                    <td></td>
+                                    <td style="font-weight:700;" width="390">Description</td>
+                                    <td>@Model.Description</td>
                                 </tr>
                                 <tr>
-                                    <td width="390">Creat by</td>
+                                    <td style="font-weight:700;" width="390">Sell Price</td>
+                                    <td>@Model.SellPrice</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:700;" width="390">Discount Price</td>
+                                    <td>@Model.DiscountPrice</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:700;" width="390">Vendor By</td>
+                                    <td>@Model.Vendor.FullName</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:700;" width="390">Categories</td>
+                                    <td>
+                                        @foreach (Category category in Model.Category)
+                                        {
+                                            <span> / @category.Name</span>
+                                        }
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:700;" width="390">Creat By</td>
                                     <td>@Model.CreateBy</td>
                                 </tr>
                                 <tr>
-                                    <td width="390">Created date</td>
+                                    <td style="font-weight:700;" width="390">Created date</td>
                                     <td>@Model.Created</td>
                                 </tr>
                                 <tr>
-                                    <td width="390">Modified by</td>
+                                    <td style="font-weight:700;" width="390">Modified By</td>
                                     <td>@Model.ModifiedBy</td>
                                 </tr>
                                 <tr>
-                                    <td width="390">Modified date</td>
+                                    <td style="font-weight:700;" width="390">Modified date</td>
                                     <td>@Model.Modified</td>
                                 </tr>
                                 <tr>
-                                    <td width="390">IP Address</td>
+                                    <td style="font-weight:700;" width="390">IP Address</td>
                                     <td>@Model.IPAddress</td>
                                 </tr>
-                    
+
 
                             </tbody>
                         </table>
                     </div>
 
-                    @if (Model.Sizes != null)
+
+
+
+                    @if (Model.ProductWeights != null)
                     {
-                    <div class="container">
-                        <table class="table table-hover ">
-                            <thead class="head bg-primary text-white" style="cursor: pointer;">
-                                <tr>
-                                    <th>#</th>
-                                    <th>Size</th>
-                                    <th>Count</th>
-                                </tr>
-                            </thead>
-                            <tbody class="body hidden" style="display: none;">
-@*                                 <tr>
-                                    <td>1</td>
-                                    <td>Smol</td>
-                                    <td>Count</td>
-                                </tr> *@
+                        <h2 class="mt-5 mb-1 text-center">Weights</h2>
+                        <div class="container mb-5">
+                            <div class="container">
+                                <table class="table table-hover ">
+                                    <thead class="head bg-primary text-white" style="cursor: pointer;">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Weight(Gram)</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="body hidden" style="display: none;">
+                                        @foreach (var weights in Model.ProductWeights)
+                                        {
+                                            <tr>
+                                                <td>@(wCon++)</td>
+                                                <td>@weights.Weight.Gram</td>
+                                                <td>@weights.Count</td>
+                                            </tr>
+                                        }
 
-                                @foreach(Size size in Model.Sizes){
-                                    <tr>
-                                        <td>1</td>
-                                        <td>@size.Name</td>
-                                        <td>@size.Count</td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     }
 
-                    @if (Model.Weights != null)
+                    @if (Model.ProductSizes != null)
                     {
+                        <h2 class="mt-5 mb-1 text-center">Sizes</h2>
+                        <div class="container mb-5">
+                            <div class="container">
+                                <table class="table table-hover ">
+                                    <thead class="head bg-primary text-white" style="cursor: pointer;">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Size</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="body hidden" style="display: none;">
+                                        @foreach (var size in Model.ProductSizes)
+                                        {
+                                            <tr>
+                                                <td>@(sCon++)</td>
+                                                <td>@size.Size.Name</td>
+                                                <td>@size.Count</td>
+                                            </tr>
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    }
+
+
+
+
+
+
+
+
+
+                    <h2 class="mt-5 mb-1 text-center">Ratings and Comments</h2>
+                    <div class="container mb-5">
                         <div class="container">
                             <table class="table table-hover ">
                                 <thead class="head bg-primary text-white" style="cursor: pointer;">
                                     <tr>
                                         <th>#</th>
-                                        <th>Size</th>
-                                        <th>Count</th>
+                                        <th>Customer</th>
+                                        <th>Evaluation</th>
+                                        <th>Comment</th>
                                     </tr>
                                 </thead>
                                 <tbody class="body hidden" style="display: none;">
-                                    @*                                 <tr>
-                                <td>1</td>
-                                <td>Smol</td>
-                                <td>Count</td>
-                                </tr> *@
-
-                                    @foreach (Weight weight in Model.Weights)
+                                    @foreach (var rating in Model.CustomerRatings)
                                     {
                                         <tr>
-                                            <td>1</td>
-                                            <td>@weight.Gram</td>
-                                            <td>@weight.Count</td>
+                                            <td>@(cCon++)</td>
+                                            <td>@rating.Customer.FullName</td>
+                                            <td>@rating.Evaluation</td>
+                                            <td>@rating.Comment</td>
                                         </tr>
                                     }
+
                                 </tbody>
                             </table>
                         </div>
-                    }
+                    </div>
 
 
-                    </table>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Bootstrap JS and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-@* <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script> *@
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    @* <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script> *@
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        $('.head').click(function () {
-            $(this).siblings('.body').toggle();
+    <script>
+        $(document).ready(function () {
+            $('.head').click(function () {
+                $(this).siblings('.body').toggle();
+            });
         });
-    });
-</script>
+    </script>
 
-<script>
-    const lists = document.querySelector(".lists")
-    const list = document.querySelector(".list")
-    let status = false
-    lists.addEventListener("click", () => {
-        if (status) {
-            list.style.display = "none"; // Önceki hata burada. Görünürlüğü "none" olarak değiştir.
-            status = false; // Görünürlük kapalı olduğunda durumu güncelle.
-        } else {
-            list.style.display = "block"; // Görünürlüğü "block" olarak değiştir.
-            status = true; // Görünürlük açık olduğunda durumu güncelle.
-        }
-    })
-</script>
+    <script>
+        const lists = document.querySelector(".lists")
+        const list = document.querySelector(".list")
+        let status = false
+        lists.addEventListener("click", () => {
+            if (status) {
+                list.style.display = "none";
+                status = false;
+            } else {
+                list.style.display = "block";
+                status = true;
+            }
+        })
+
+
+
+
+    </script>

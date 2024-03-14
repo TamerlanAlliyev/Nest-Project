@@ -69,6 +69,10 @@ namespace Nest.Controllers
                                                                         .Include(p => p.Category)
                                                                         .Include(p => p.Vendor)
                                                                         .Include(p => p.CustomerRatings)
+                                                                        .Include(p => p.ProductSizes)
+                                                                            .ThenInclude(p=>p.Size)
+                                                                        .Include(p=>p.ProductWeights)
+                                                                            .ThenInclude(p=>p.Weight)
                                                                         .Include(p => p.ProductImages)
                                                                         .FirstOrDefaultAsync();
 
@@ -76,18 +80,16 @@ namespace Nest.Controllers
                                   .Where(c => !c.IsDeleted)
                                   .Include(c => c.Product)
                                   .ToListAsync();
-            //if (product != null)
-            //{
-            //    return NotFound();
-            //}
-
+          
             ProductVM productVM = new ProductVM()
             {
                 Product = product,
                 Categories= categories
             };
 
-           
+            //TempData["ProductImage"] = product;
+
+
 
             return View(productVM);
         }

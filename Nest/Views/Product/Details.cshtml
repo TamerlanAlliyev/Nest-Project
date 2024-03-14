@@ -6,6 +6,11 @@
         totalEvaluation = totalEvaluation + rating.Evaluation;
     }
 
+    var stock = 0;
+    foreach (var item in Model.Product.ProductWeights)
+    {
+        stock += item.Count;
+    }
 }
 
 
@@ -95,42 +100,24 @@
                                         <div class="short-desc mb-30">
                                             <p class="font-lg">@Model.Product.Description</p>
                                         </div>
+
+
                                         <div class="attr-detail attr-size mb-30">
+
                                             <strong class="mr-10">Size / Weight: </strong>
                                             <ul class="list-filter size-filter font-small">
-
-                                                @if (Model.Product.Sizes != null)
+                                                @if (Model.Product.ProductWeights != null)
                                                 {
-                                                    <li><a href="#">20g</a></li>
-
-                                                    @foreach (Size size in Model.Product.Sizes)
+                                                    @foreach (var item in Model.Product.ProductWeights.Where(p=>p.Count>0).ToList())
                                                     {
-
-                                                        <li><a href="#">50g</a></li>
-
+                                                        <li><a href="#">@(item.Weight.Gram)g</a></li>
                                                     }
                                                 }
-
-                                                @if (Model.Product.Weights != null)
-                                                {
-                                                    <li><a href="#">50g</a></li>
-
-                                                    @foreach (Weight weight in Model.Product.Weights)
-                                                    {
-
-                                                        <li><a href="#">@weight.Gram </a></li>
-
-                                                    }
-                                                }
-
-
-                                                @*              <li><a href="#">50g</a></li>
-                                                <li class="active"><a href="#">60g</a></li>
-                                                <li><a href="#">80g</a></li>
-                                                <li><a href="#">100g</a></li>
-                                                <li><a href="#">150g</a></li> *@
                                             </ul>
+
                                         </div>
+
+
                                         <div class="detail-extralink mb-50">
                                             <div class="detail-qty border radius">
                                                 <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
@@ -152,7 +139,7 @@
                                             <ul class="float-start">
                                                 <li class="mb-5">SKU: <a href="#">FWM15VKT</a></li>
                                                 <li class="mb-5">Tags: <a href="#" rel="tag">Snack</a>, <a href="#" rel="tag">Organic</a>, <a href="#" rel="tag">Brown</a></li>
-                                                <li>Stock:<span class="in-stock text-brand ml-5">8 Items In Stock</span></li>
+                                                <li>Stock:<span class="in-stock text-brand ml-5">@(stock) Items In Stock</span></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -610,7 +597,7 @@
                         <div class="sidebar-widget widget-category-2 mb-30">
                             <h5 class="section-title style-1 mb-30">Category</h5>
                             <ul>
-                                @foreach(Category category in Model.Categories)
+                                @foreach (Category category in Model.Categories)
                                 {
                                     <li>
                                         <a href="shop-grid-right.html"> <img src="~/admin/icons/categories/@category.Icon" alt="@category.Icon" />@category.Name</a><span class="count">@category.Product.Count()</span>

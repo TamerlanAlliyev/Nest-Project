@@ -259,6 +259,9 @@ namespace Nest.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<bool?>("IsHover")
+                        .HasColumnType("bit");
+
                     b.Property<bool?>("IsMain")
                         .HasColumnType("bit");
 
@@ -282,7 +285,7 @@ namespace Nest.Migrations
                     b.ToTable("ProductImages", (string)null);
                 });
 
-            modelBuilder.Entity("Nest.Models.Size", b =>
+            modelBuilder.Entity("Nest.Models.ProductSize", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -292,6 +295,55 @@ namespace Nest.Migrations
 
                     b.Property<int>("Count")
                         .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SizeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("SizeId");
+
+                    b.ToTable("ProductSize");
+                });
+
+            modelBuilder.Entity("Nest.Models.ProductWeight", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WeightId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("WeightId");
+
+                    b.ToTable("ProductWeights");
+                });
+
+            modelBuilder.Entity("Nest.Models.Size", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("CreateBy")
                         .HasColumnType("int");
@@ -316,12 +368,7 @@ namespace Nest.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(50)");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("Sizes", (string)null);
                 });
@@ -393,9 +440,6 @@ namespace Nest.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
-
                     b.Property<int>("CreateBy")
                         .HasColumnType("int");
 
@@ -418,12 +462,7 @@ namespace Nest.Migrations
                     b.Property<int?>("ModifiedBy")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("Weights", (string)null);
                 });
@@ -484,26 +523,42 @@ namespace Nest.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Nest.Models.Size", b =>
+            modelBuilder.Entity("Nest.Models.ProductSize", b =>
                 {
                     b.HasOne("Nest.Models.Product", "Product")
-                        .WithMany("Sizes")
+                        .WithMany("ProductSizes")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Nest.Models.Size", "Size")
+                        .WithMany("ProductSizes")
+                        .HasForeignKey("SizeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Product");
+
+                    b.Navigation("Size");
                 });
 
-            modelBuilder.Entity("Nest.Models.Weight", b =>
+            modelBuilder.Entity("Nest.Models.ProductWeight", b =>
                 {
                     b.HasOne("Nest.Models.Product", "Product")
-                        .WithMany("Weights")
+                        .WithMany("ProductWeights")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Nest.Models.Weight", "Weight")
+                        .WithMany("ProductWeight")
+                        .HasForeignKey("WeightId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Product");
+
+                    b.Navigation("Weight");
                 });
 
             modelBuilder.Entity("Nest.Models.Customer", b =>
@@ -517,14 +572,24 @@ namespace Nest.Migrations
 
                     b.Navigation("ProductImages");
 
-                    b.Navigation("Sizes");
+                    b.Navigation("ProductSizes");
 
-                    b.Navigation("Weights");
+                    b.Navigation("ProductWeights");
+                });
+
+            modelBuilder.Entity("Nest.Models.Size", b =>
+                {
+                    b.Navigation("ProductSizes");
                 });
 
             modelBuilder.Entity("Nest.Models.Vendor", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("Nest.Models.Weight", b =>
+                {
+                    b.Navigation("ProductWeight");
                 });
 #pragma warning restore 612, 618
         }

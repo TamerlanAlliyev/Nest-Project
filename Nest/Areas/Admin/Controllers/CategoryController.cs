@@ -99,7 +99,7 @@ namespace Nest.Areas.Admin.Controllers
             var category = await _context.Categories.FindAsync(id);
             if (category != null)
             {
-                string path = Path.Combine(_environment.WebRootPath, "admin", "icons", "categories", category.Icon);
+                string path = Path.Combine(_environment.WebRootPath, "cilent", "imgs", "icons", "categories", category.Icon);
                 if (System.IO.File.Exists(path))
                 {
                     System.IO.File.Delete(path);

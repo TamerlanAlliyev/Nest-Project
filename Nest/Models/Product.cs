@@ -17,8 +17,10 @@ namespace Nest.Models
 
         public List<ProductImage> ProductImages { get; set; } = null!;
         public List<CustomerRating> CustomerRatings { get; set; } = null!;
-        public List<Size> Sizes { get; set; } = null!;
-        public List<Weight> Weights { get; set; } = null!;
+
+        public List<ProductSize>? ProductSizes { get; set; } 
+        public List<ProductWeight>? ProductWeights { get; set; }
+
 
     }
 }

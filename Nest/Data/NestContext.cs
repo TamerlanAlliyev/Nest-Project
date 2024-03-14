@@ -18,7 +18,9 @@ namespace Nest.Data
         public DbSet<ProductImage> ProductImages { get; set; } = null!;
         public DbSet<Vendor> Vendors { get; set; } = null!;
         public DbSet<Size> Sizes { get; set; } = null!;
+        public DbSet<ProductSize> ProductSize { get; set; } = null!;
         public DbSet<Weight> Weights { get; set; } = null!;
+        public DbSet<ProductWeight> ProductWeights { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
