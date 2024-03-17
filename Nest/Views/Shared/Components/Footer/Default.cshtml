@@ -1,0 +1,15 @@
+﻿@model List<FooterHeads>
+
+@foreach (var navbar in Model)
+{
+    <div class="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
+        <h4 class="widget-title">@navbar.Head</h4>
+        <ul class="footer-list mb-sm-5 mb-md-0">
+            @foreach (var list in navbar.FooterSubs)
+            {
+                <li><a href="~/#">@list.SubList</a></li>
+            }
+
+        </ul>
+    </div>
+}

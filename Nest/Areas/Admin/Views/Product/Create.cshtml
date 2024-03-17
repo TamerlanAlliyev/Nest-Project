@@ -1,0 +1,189 @@
+﻿@model ProductVM
+
+@{
+    int con = 1;
+}
+
+
+<div class="container d-flex justify-content-center align-self-lg-center w-75" style="width: 100%; border-radius: 15px; border:1px solid dodgerblue; color: black;">
+    <div class="card-body">
+        <form method="post" enctype="multipart/form-data">
+
+            <div class="d-flex justify-content-center g-5">
+
+
+                <div class="w-100">
+               <div class="form-group mb-3">
+                        <label>Name</label>
+                        <input class="form-control w-75" asp-for="Product.Name" />
+                        <span class="text-danger" asp-validation-for="Product.Name"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Description</label>
+                        <input class="form-control w-75" asp-for="Product.Description" />
+                        <span class="text-danger" asp-validation-for="Product.Description"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Sell Price</label>
+                        <input class="form-control w-75" asp-for="Product.SellPrice" />
+                        <span class="text-danger" asp-validation-for="Product.SellPrice"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Discount Price</label>
+                        <input class="form-control w-75" asp-for="Product.DiscountPrice" />
+                        <span class="text-danger" asp-validation-for="Product.DiscountPrice"></span>
+                    </div> 
+                </div>
+
+
+
+
+
+
+                <div class="w-50">
+                    <div class="form-group">
+                        <label class="form-label" for="vendors">Vendors</label>
+                        <select asp-for="Vendors" asp-items="@ViewBag.Vendors" class="form-select" id="vendors">
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="categories">Categories</label>
+                        <select asp-for="Categories" asp-items="@ViewBag.Categories" class="form-select" id="categories">
+                            <option selected disabled>Select Category</option>
+                        </select>
+                    </div> 
+
+                <div class="form-group">
+                        <label class="form-label" for="sizes">Sizes</label>
+                        <select asp-for="Sizes" asp-items="@ViewBag.Sizes" class="form-select" id="sizes">
+                        </select>
+                    </div> 
+
+                    <div class="form-group">
+                        <label class="form-label" for="weights">Weights</label>
+                        <select asp-for="Weights" asp-items="@ViewBag.Weights" class="form-select" id="weights">
+                        </select>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <h2 class="mt-5 mb-1 text-center">Sizes</h2>
+            <div class="container mb-5">
+                <div class="container">
+                    <table class="table table-hover ">
+                        <thead class="head bg-primary text-white" style="cursor: pointer;">
+                            <tr>
+                                <th>#</th>
+                                <th>Weight(Gram)</th>
+                                <th>Count</th>
+                            </tr>
+                        </thead>
+                        <tbody class="body hidden" style="display: none;">
+                            @foreach(var size in Model.Sizes)
+                            {
+                                <tr>
+                                    <td>@(con++)</td>
+                                    <td>@size.Name</td>
+                                    <td>
+                                        <input  data-size-id="@size.Id" type="number" class="form-control w-25" asp-for="ProductSize.Count" />
+                                    </td>
+                                </tr>
+                            }
+
+         
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="text-center">
+                <h2 class="mt-4">Entry Images</h2>
+
+                <div class="d-flex m-3">
+                    <div class="form-group mb-3 ml-3 d-flex flex-column">
+                        <label for="productImage">Image Files</label>
+                        <input type="file" class="form-control" id="productImage" asp-for="Product.Files">
+                        <span class="text-danger" asp-validation-for="Product.Files"></span>
+                    </div>
+                    <div class="form-group mb-3 ml-3 d-flex flex-column">
+                        <label for="productImage">Image Is Main</label>
+                        <input type="file" class="form-control" id="productImage" asp-for="Product.IsMainFile">
+                        <span class="text-danger" asp-validation-for="Product.IsMainFile"></span>
+                    </div>
+                    <div class="form-group mb-3 ml-3 d-flex flex-column">
+                        <label for="productImage">Image Is Hover</label>
+                        <input type="file" class="form-control" id="productImage" asp-for="Product.IsHoverFile">
+                        <span class="text-danger" asp-validation-for="Product.IsHoverFile"></span>
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+@* <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script> *@
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.head').click(function () {
+            $(this).siblings('.body').toggle();
+        });
+    });
+</script>
+
+<script>
+    const lists = document.querySelector(".lists")
+    const list = document.querySelector(".list")
+    let status = false
+    lists.addEventListener("click", () => {
+        if (status) {
+            list.style.display = "none";
+            status = false;
+        } else {
+            list.style.display = "block";
+            status = true;
+        }
+    })
+
+
+
+
+</script>

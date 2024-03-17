@@ -22,6 +22,9 @@ namespace Nest.Data
         public DbSet<Weight> Weights { get; set; } = null!;
         public DbSet<ProductWeight> ProductWeights { get; set; } = null!;
 
+        public DbSet<FooterHeads> FooterHeads { get; set; } = null!;
+        public DbSet<FooterSub> FooterSubs { get; set; } = null!;
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

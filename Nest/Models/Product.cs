@@ -1,4 +1,5 @@
 ﻿using Nest.Models.BaseEntitys;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Nest.Models
 {
@@ -20,6 +21,14 @@ namespace Nest.Models
 
         public List<ProductSize>? ProductSizes { get; set; } 
         public List<ProductWeight>? ProductWeights { get; set; }
+
+
+        [NotMapped]
+        public IFormFile Files { get; set; } = null!;
+        [NotMapped]
+        public IFormFile IsMainFile { get; set; } = null!;
+        [NotMapped]
+        public IFormFile IsHoverFile { get; set; } = null!;
 
 
     }

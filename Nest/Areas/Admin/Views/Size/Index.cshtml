@@ -1,0 +1,111 @@
+﻿@model SizeVM
+@{
+    int con = 1;
+}
+
+<div  class="container-fluid">
+
+
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4 mt-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Categories Example</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    <div class="col-sm-12">
+                        <table class="table table-bordered table-hover  dataTable align-text-center" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                            <thead>
+
+                                <tr role="row " style="text-align:center;">
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 100px;">#</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 100px;">Size</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Details</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Edit</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10px;">Remove</th>
+                           
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr style="text-align:center;">
+                                    <th rowspan="1" colspan="1">#</th>
+                                    <th rowspan="1" colspan="1">Size</th>
+                                    <th rowspan="1" colspan="1">Details</th>
+                                    <th rowspan="1" colspan="1">Edit</th>
+                                    <th rowspan="1" colspan="1">Remove</th>
+                            </tfoot>
+                            <tbody style="text-align:center;">
+
+                                @foreach (Size size in Model.Sizes)
+                                {
+                                    <tr class="even  align-items-center">
+                                        <td style="vertical-align: middle;" class="align-items-center">@(con++)</td>
+                                        <td style="vertical-align: middle;" class="align-items-center">@size.Name</td>
+                                        <td style="vertical-align: middle;" class="align-items-center">
+                                            <a asp-area="Admin" asp-controller="Size" asp-action="Details" asp-route-id="@size.Id" class="btn btn-sm btn-primary">Detail</a>
+                                        </td>
+                                        <td style="vertical-align: middle;" class="align-items-center">
+                                            <a asp-area="Admin" asp-controller="Size" asp-action="Update" asp-route-id="@size.Id" class="btn btn-sm btn-warning">Edit</a>
+                                        </td>
+                                        <td style="vertical-align: middle;" class="align-items-center">
+                                            <a asp-area="Admin" asp-controller="Size" asp-action="Delete" asp-route-id="@size.Id" class="btn btn-sm btn-danger">Remove</a>
+                                        </td>
+                                    </tr>
+                                }
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="d-flex justify-content-center align-items-center flex-column text-center">
+        <a class="creat btn btn-success mt-3 mb-5 w-25" >New Size Creat</a>
+
+        <div class="creat-list container justify-content-center align-self-lg-center w-25 mb-5" style="display:none; width: 500px; border-radius: 15px; border:1px solid dodgerblue; color: black;">
+            <div class="card-body">
+                <form method="post" asp-action="Create">
+                    <div class="form-group mb-3">
+                        <label>Name</label>
+                        <input class="form-control " asp-for="Size.Name" />
+                        <span class="text-danger" asp-validation-for="Size.Name"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section CategoryScript {
+
+    <script>
+        const creat = document.querySelector(".creat");
+        const creatList = document.querySelector(".creat-list");
+        let toggle = false;
+        creat.addEventListener('click', () => {
+            if (toggle == false) {
+                creatList.style.display = 'flex';
+                toggle = true;
+            } else {
+                creatList.style.display = 'none'; // Buradaki 'hidden' yerine 'none' kullanın
+                toggle = false;
+            }
+        });
+    </script>
+
+    <script src="~/admin/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="~/admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/admin/js/demo/datatables-demo.js"></script>
+}

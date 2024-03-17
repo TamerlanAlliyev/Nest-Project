@@ -1,0 +1,20 @@
+﻿@model FooterSub
+
+<div class="container d-flex justify-content-center align-self-lg-center w-50" style="width: 500px; border-radius: 15px; border: 1px solid dodgerblue; color: black;">
+    <div class="card-body">
+        <form method="post" >
+            <input type="hidden" asp-for="Id" />
+            <div class="mb-3">
+                <label asp-for="SubList" class="form-label">Sub Category</label>
+                <input type="text" class="form-control" asp-for="SubList" />
+                <span asp-validation-for="SubList" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Order" class="form-label">Order</label>
+                <input type="number" class="form-control" asp-for="Order" />
+                <span asp-validation-for="Order" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

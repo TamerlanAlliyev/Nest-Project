@@ -1,0 +1,24 @@
+﻿@model FooterSub
+
+
+<div class="container d-flex justify-content-center align-self-lg-center w-50" style="width: 500px; border-radius: 15px; border:1px solid dodgerblue; color: black;">
+    <div class="card-body">
+    <form method="post">
+        <div class="d-flex">
+
+            <div class="form-group mb-3 w-25">
+                <label>Order</label>
+                <input type="number" class="form-control w-75" asp-for="Order" />
+                <span class="text-danger" asp-validation-for="Order"></span>
+            </div>
+            <div class="form-group mb-3 w-100">
+                <label>Name</label>
+                <input class="form-control w-100" asp-for="SubList" />
+                <span class="text-danger" asp-validation-for="SubList"></span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">Creat</button>
+    </form>
+    </div>
+</div>

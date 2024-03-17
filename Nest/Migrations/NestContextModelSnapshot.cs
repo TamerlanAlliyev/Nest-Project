@@ -184,6 +184,89 @@ namespace Nest.Migrations
                     b.ToTable("CustomersRatings", (string)null);
                 });
 
+            modelBuilder.Entity("Nest.Models.FooterHeads", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CreateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("Head")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("IPAddress")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime");
+
+                    b.Property<int?>("ModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Order")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FooterHeads");
+                });
+
+            modelBuilder.Entity("Nest.Models.FooterSub", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CreateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime");
+
+                    b.Property<int>("FooterHeadsId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("IPAddress")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime");
+
+                    b.Property<int?>("ModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Order")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SubList")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FooterHeadsId");
+
+                    b.ToTable("FooterSubs");
+                });
+
             modelBuilder.Entity("Nest.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -501,6 +584,17 @@ namespace Nest.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Nest.Models.FooterSub", b =>
+                {
+                    b.HasOne("Nest.Models.FooterHeads", "FooterHeads")
+                        .WithMany("FooterSubs")
+                        .HasForeignKey("FooterHeadsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("FooterHeads");
+                });
+
             modelBuilder.Entity("Nest.Models.Product", b =>
                 {
                     b.HasOne("Nest.Models.Vendor", "Vendor")
@@ -564,6 +658,11 @@ namespace Nest.Migrations
             modelBuilder.Entity("Nest.Models.Customer", b =>
                 {
                     b.Navigation("CustomerRatings");
+                });
+
+            modelBuilder.Entity("Nest.Models.FooterHeads", b =>
+                {
+                    b.Navigation("FooterSubs");
                 });
 
             modelBuilder.Entity("Nest.Models.Product", b =>

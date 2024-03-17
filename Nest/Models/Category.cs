@@ -11,10 +11,5 @@ namespace Nest.Models
         [NotMapped]
         public IFormFile FormFile { get; set; } = null!;
         public List<Product> Product { get; set; } = null!;
-
-        internal async Task SaveFileAsync(string webRootPath)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

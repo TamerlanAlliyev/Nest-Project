@@ -1,0 +1,115 @@
+@* @{
+    var Category = ViewBag.Categories;
+    var Sizes = ViewBag.Sizes;
+    var Weights = ViewBag.Weights;
+    var Vendors = ViewBag.Vendors;
+} *@
+@model ProductVM
+
+
+<div class="container d-flex justify-content-center align-self-lg-center w-50 mb-5 mt-5" style="width: 500px; border-radius: 15px; border:1px solid dodgerblue; color: black;">
+    <div class="card-body">
+        <form method="post" enctype="multipart/form-data">
+
+            <div class="d-flex">
+
+@*                 <div class="w-100">
+                    <div class="form-group mb-3">
+                        <label>Name</label>
+                        <input class="form-control w-75" asp-for="Name" />
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Description</label>
+                        <input class="form-control w-75" asp-for="Description" />
+                        <span class="text-danger" asp-validation-for="Description"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Sell Price</label>
+                        <input class="form-control w-75" asp-for="SellPrice" />
+                        <span class="text-danger" asp-validation-for="SellPrice"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Discount Price</label>
+                        <input class="form-control w-75" asp-for="DiscountPrice" />
+                        <span class="text-danger" asp-validation-for="DiscountPrice"></span>
+                    </div>
+                </div> *@
+
+                <div class="w-50">
+                    <div class="mb-3 ">
+                        <label for="exampleInputPassword1" class="form-label">Category</label>
+                        <select asp-for="Categories" asp-items="@(new SelectList(ViewBag.Categories,nameof(Model.Categories),nameof(Category.Name)))" class="form-control form-select">
+                            <option selected>Select Category</option>
+                        </select>
+                        <span asp-validation-for="Categories" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 ">
+                        <label for="exampleInputPassword1" class="form-label">Size</label>
+                        <select asp-for="Size" asp-items="@(new SelectList(ViewBag.Categories,nameof(Size.Id),nameof(Sizes.Name)))" class="form-control form-select">
+                            <option selected>Select Size</option>
+                        </select>
+                        <span asp-validation-for="Sizes" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Weight</label>
+                        <select asp-for="Weights" asp-items="@(new SelectList(ViewBag.Categories,nameof(Weights.Id),nameof(Weights.Name)))" class="form-control form-select">
+                            <option selected>Select Weight</option>
+                        </select>
+                        <span asp-validation-for="Weights" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Vendor</label>
+                        <select asp-for="Vendors" asp-items="@(new SelectList(ViewBag.Categories,nameof(Vendors.Id),nameof(Category.Name)))" class="form-control form-select">
+                            <option selected>Select Vendors</option>
+                        </select>
+                        <span asp-validation-for="Vendors" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+@* 
+            <div class="d-flex align-self-lg-center justify-content-center mb-5 mt-2">
+
+                <div>
+                    <label for="newImageFile" class="form-label">Files</label>
+                    <div class="input-group w-75 ">
+                        <input asp-for="Files" type="file" class="form-control custom-file-input " id="newImageFile" name="Files" onchange="updateFileLabel(this)">
+                        <label for="newImageFile" class="custom-file-label">Choose File</label>
+                        <span class="text-danger" asp-validation-for="Files"></span>
+                    </div>
+                </div>
+                <div>
+                    <label for="newImageFile" class="form-label ">Is Main</label>
+                    <div class="input-group w-75">
+                        <input asp-for="Files" type="file" class="form-control custom-file-input " id="newImageFile" name="Files" onchange="updateFileLabel(this)">
+                        <label for="newImageFile" class="custom-file-label">Choose File</label>
+                        <span class="text-danger" asp-validation-for="Files"></span>
+                    </div>
+                </div>
+                <div>
+                    <label for="newImageFile" class="form-label ">Is Main</label>
+                    <div class="input-group w-75">
+                        <input asp-for="Files" type="file" class="form-control custom-file-input " id="newImageFile" name="Files" onchange="updateFileLabel(this)">
+                        <label for="newImageFile" class="custom-file-label">Choose File</label>
+                        <span class="text-danger" asp-validation-for="Files"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mb-3 d-flex flex-column">
+                <label>ImageFile</label>
+                <input asp-for="Files" />
+                <span class="text-danger" asp-validation-for="Files"></span>
+            </div> *@
+
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
+        </form>
+    </div>
+</div>
+
