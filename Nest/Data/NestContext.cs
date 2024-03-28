@@ -24,6 +24,7 @@ namespace Nest.Data
 
         public DbSet<FooterHeads> FooterHeads { get; set; } = null!;
         public DbSet<FooterSub> FooterSubs { get; set; } = null!;
+        public DbSet<CategoryProduct> CategoryProduct { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

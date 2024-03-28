@@ -20,8 +20,8 @@ namespace Nest.Data.Configurations
             builder.HasKey(x => x.Id);
             builder.ToTable("Products");
 
-            builder.HasMany(p => p.Category)
-                .WithMany(p => p.Product);
+            //builder.HasMany(p => p.Category)
+            //    .WithMany(p => p.Product);
 
             builder.HasOne(p => p.Vendor)
                 .WithMany(p => p.Products)

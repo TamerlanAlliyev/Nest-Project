@@ -18,6 +18,5 @@ namespace Nest.Areas.Admin.ViewModels
         public List<ProductSize >ProductSizes { get; set; }
 
 
-        //public List<Vendor> Vendors { get; set; }
     }
 }

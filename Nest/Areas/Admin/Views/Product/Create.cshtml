@@ -1,153 +1,124 @@
-﻿@model ProductVM
-
+﻿@model ProductCreateVM
 @{
     int con = 1;
 }
-
-
-<div class="container d-flex justify-content-center align-self-lg-center w-75" style="width: 100%; border-radius: 15px; border:1px solid dodgerblue; color: black;">
-    <div class="card-body">
-        <form method="post" enctype="multipart/form-data">
-
-            <div class="d-flex justify-content-center g-5">
-
-
-                <div class="w-100">
-               <div class="form-group mb-3">
-                        <label>Name</label>
-                        <input class="form-control w-75" asp-for="Product.Name" />
-                        <span class="text-danger" asp-validation-for="Product.Name"></span>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label>Description</label>
-                        <input class="form-control w-75" asp-for="Product.Description" />
-                        <span class="text-danger" asp-validation-for="Product.Description"></span>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label>Sell Price</label>
-                        <input class="form-control w-75" asp-for="Product.SellPrice" />
-                        <span class="text-danger" asp-validation-for="Product.SellPrice"></span>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label>Discount Price</label>
-                        <input class="form-control w-75" asp-for="Product.DiscountPrice" />
-                        <span class="text-danger" asp-validation-for="Product.DiscountPrice"></span>
-                    </div> 
-                </div>
-
-
-
-
-
-
-                <div class="w-50">
-                    <div class="form-group">
-                        <label class="form-label" for="vendors">Vendors</label>
-                        <select asp-for="Vendors" asp-items="@ViewBag.Vendors" class="form-select" id="vendors">
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="categories">Categories</label>
-                        <select asp-for="Categories" asp-items="@ViewBag.Categories" class="form-select" id="categories">
-                            <option selected disabled>Select Category</option>
-                        </select>
-                    </div> 
-
-                <div class="form-group">
-                        <label class="form-label" for="sizes">Sizes</label>
-                        <select asp-for="Sizes" asp-items="@ViewBag.Sizes" class="form-select" id="sizes">
-                        </select>
-                    </div> 
-
-                    <div class="form-group">
-                        <label class="form-label" for="weights">Weights</label>
-                        <select asp-for="Weights" asp-items="@ViewBag.Weights" class="form-select" id="weights">
-                        </select>
-                    </div>
-                </div>
-
-
-            </div>
-
-
-
-
-
-
-
-
-            <h2 class="mt-5 mb-1 text-center">Sizes</h2>
-            <div class="container mb-5">
-                <div class="container">
-                    <table class="table table-hover ">
-                        <thead class="head bg-primary text-white" style="cursor: pointer;">
-                            <tr>
-                                <th>#</th>
-                                <th>Weight(Gram)</th>
-                                <th>Count</th>
-                            </tr>
-                        </thead>
-                        <tbody class="body hidden" style="display: none;">
-                            @foreach(var size in Model.Sizes)
-                            {
-                                <tr>
-                                    <td>@(con++)</td>
-                                    <td>@size.Name</td>
-                                    <td>
-                                        <input  data-size-id="@size.Id" type="number" class="form-control w-25" asp-for="ProductSize.Count" />
-                                    </td>
-                                </tr>
-                            }
-
-         
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <div class="text-center">
-                <h2 class="mt-4">Entry Images</h2>
-
-                <div class="d-flex m-3">
-                    <div class="form-group mb-3 ml-3 d-flex flex-column">
-                        <label for="productImage">Image Files</label>
-                        <input type="file" class="form-control" id="productImage" asp-for="Product.Files">
-                        <span class="text-danger" asp-validation-for="Product.Files"></span>
-                    </div>
-                    <div class="form-group mb-3 ml-3 d-flex flex-column">
-                        <label for="productImage">Image Is Main</label>
-                        <input type="file" class="form-control" id="productImage" asp-for="Product.IsMainFile">
-                        <span class="text-danger" asp-validation-for="Product.IsMainFile"></span>
-                    </div>
-                    <div class="form-group mb-3 ml-3 d-flex flex-column">
-                        <label for="productImage">Image Is Hover</label>
-                        <input type="file" class="form-control" id="productImage" asp-for="Product.IsHoverFile">
-                        <span class="text-danger" asp-validation-for="Product.IsHoverFile"></span>
-                    </div>
-                </div>
-
-
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-
-
-        </form>
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" asp-for="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        @* <div class="form-text">We'll never share your email with anyone else.</div> *@
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
-</div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Description</label>
+        <input type="text" asp-for="Description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        @* <div class="form-text">We'll never share your email with anyone else.</div> *@
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Sell Price</label>
+        <input type="text" asp-for="Price" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        @* <div class="form-text">We'll never share your email with anyone else.</div> *@
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Discount Price</label>
+        <input type="text" asp-for="DiscountPrice" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        @* <div class="form-text">We'll never share your email with anyone else.</div> *@
+        <span asp-validation-for="DiscountPrice" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <div class="form-group">
+            <label class="form-label" for="categories">Categories</label>
+            <select asp-for="CategoryId" asp-items="@ViewBag.Categories" class="form-select" id="categories">
+                <option selected disabled>Select Category</option>
+            </select>
+
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="form-group">
+            <label class="form-label" for="categories">Vendor</label>
+            <select asp-for="VendorId" asp-items="@ViewBag.Vendor" class="form-select" id="vendors">
+                <option selected disabled>Select Vendor</option>
+            </select>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Main File</label>
+        <input asp-for="MainFile" class="form-control">
+        <span asp-validation-for="MainFile" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Hover File</label>
+        <input asp-for="HoverFile" class="form-control">
+        <span asp-validation-for="HoverFile" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Additional Files</label>
+        <input asp-for="Files" class="form-control" type="file" multiple>
+        <span asp-validation-for="Files" class="text-danger"></span>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2 class="mt-5 mb-1 text-center w-100">Sizes</h2>
+    <div class="container mb-5">
+        <div class="container">
+            <table class="table table-hover ">
+                <thead class="head bg-primary text-white" style="cursor: pointer;">
+                    <tr>
+                        <th>#</th>
+                        <th>Weight(Gram)</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody class="body hidden" style="display: none;">
+                    @foreach (var size in ViewBag.Sizes)
+                    {
+                        <tr>
+                            <td>@(con++)</td>
+                            <td>@size.Name</td>
+                            <td>
+                                <input type="number" min="0" value="0" class="form-control w-25" asp-for="SizeCount" asp-route-id="@size.Id" />
+                                <input type="hidden" name="SizeId" value="@size.Id" asp-for="SizeId" />
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div asp-validation-summary="ModelOnly" class="text-danger">  </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
 
 
 

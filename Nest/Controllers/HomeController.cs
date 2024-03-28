@@ -12,5 +12,10 @@ namespace Nest.Controllers
             ViewBag.QuickPartialView = true;
             return View();
 		}
+
+		public IActionResult ProductCategoryFilter(int? id)
+		{
+			return ViewComponent("Product",id);
+		}
 	}
 }

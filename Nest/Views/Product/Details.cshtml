@@ -108,7 +108,7 @@
                                             <ul class="list-filter size-filter font-small">
                                                 @if (Model.Product.ProductWeights != null)
                                                 {
-                                                    @foreach (var item in Model.Product.ProductWeights.Where(p=>p.Count>0).ToList())
+                                                    @foreach (var item in Model.Product.ProductWeights.Where(p => p.Count > 0).ToList())
                                                     {
                                                         <li><a href="#">@(item.Weight.Gram)g</a></li>
                                                     }
@@ -596,14 +596,16 @@
                     <div class="col-xl-3 primary-sidebar sticky-sidebar mt-30">
                         <div class="sidebar-widget widget-category-2 mb-30">
                             <h5 class="section-title style-1 mb-30">Category</h5>
-                            <ul>
-                                @foreach (Category category in Model.Categories)
-                                {
-                                    <li>
-                                        <a href="shop-grid-right.html"> <img src="~/admin/icons/categories/@category.Icon" alt="@category.Icon" />@category.Name</a><span class="count">@category.Product.Count()</span>
-                                    </li>
-                                }
-                            </ul>
+
+                            @await Component.InvokeAsync(nameof(Category))
+                            @*                             <ul>
+                            @foreach (Category category in Model.Categories)
+                            {
+                            <li>
+                            <a href="shop-grid-right.html"> <img src="~/admin/icons/categories/@category.Icon" alt="@category.Icon" />@category.Name</a><span class="count">@category.CategoryProducts.Count()</span>
+                            </li>
+                            }
+                            </ul> *@
                         </div>
                         <!-- Fillter By Price -->
                         <div class="sidebar-widget price_range range mb-30">

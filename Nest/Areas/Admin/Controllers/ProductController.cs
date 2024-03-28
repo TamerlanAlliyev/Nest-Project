@@ -6,6 +6,7 @@ using Nest.Models;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using YourNamespace.Extensions;
 
 namespace Nest.Areas.Admin.Controllers
 {
@@ -24,7 +25,8 @@ namespace Nest.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             var products = await _context.Products
-                .Include(p => p.Category)
+                .Include(p => p.CategoryProducts)
+                .ThenInclude(p => p.Category)
                 .Include(p => p.ProductImages.Where(pi => pi.IsMain == true))
                 .Include(p => p.Vendor)
                 .Where(p => !p.IsDeleted)
@@ -44,8 +46,9 @@ namespace Nest.Areas.Admin.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var product = await _context.Products
-                         .Include(p => p.Category)
+            var product = await _context.Products.Where(p=>!p.IsDeleted&&p.Id==id)
+                         .Include(p => p.CategoryProducts)
+                         .ThenInclude(p => p.Category)
                          .Include(p => p.Vendor)
                          .Include(p => p.CustomerRatings)
                              .ThenInclude(p => p.Customer)
@@ -63,137 +66,203 @@ namespace Nest.Areas.Admin.Controllers
 
 
 
-
-        //public async Task<IActionResult> Create()
-        //{
-        //    //await _context.Categories.ToListAsync();
-        //    ViewBag.Categories = new SelectList(_context.Categories, "Id", "Name");
-        //    ViewBag.Sizes = new SelectList(_context.Sizes, "Id", "Name");
-        //    ViewBag.Weights = new SelectList(_context.Weights, "Id", "Gram");
-        //    ViewBag.Vendors = new SelectList(_context.Vendors, "Id", "FullName");
-
-        //    //List<Category> Category = await _context.Categories.ToListAsync();
-        //    //List<Size> Sizes = await _context.Sizes.ToListAsync();
-        //    //List<Weight> Weights = await _context.Weights.ToListAsync();
-        //    //List<Vendor> Vendors = await _context.Vendors.ToListAsync();
-        //    //ProductVM productVM = new ProductVM()
-        //    //{
-        //    //    Categories = Category,
-        //    //    Sizes = Sizes,
-        //    //    Weights = Weights,
-        //    //    Vendors = Vendors
-        //    //};
-
-
-
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //public async Task<IActionResult> Create(ProductVM product)
-        //{
-        //    if (product == null)
-        //    {
-        //        return BadRequest();
-        //    }
-
-
-        //    string uploadFolder = Path.Combine(_environment.WebRootPath, "cilent", "icons", "categories");
-        //    //string uniqueFileName = await category.FormFile.SaveToAsync(uploadFolder);
-
-        //    var IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown";
-        //    var createBy = 1;
-        //    var created = DateTime.UtcNow;
-
-        //    var newCategory = new Category
-        //    {
-        //        //Name = category.Name.Trim(),
-        //        //Icon = uniqueFileName,
-        //        IPAddress = IpAddress,
-        //        CreateBy = createBy,
-        //        Created = created,
-        //        IsDeleted = false,
-        //    };
-
-        //    await _context.Categories.AddAsync(newCategory);
-        //    await _context.SaveChangesAsync();
-
-        //    return RedirectToAction(nameof(Index));
-        //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public async Task<IActionResult> Create()
         {
-            ViewBag.Categories = new SelectList(_context.Categories, "Id", "Name");
-            //ViewBag.Sizes = new SelectList(_context.Sizes, "Id", "Name");
-            ViewBag.Sizes = await _context.Sizes.Where(s=>!s.IsDeleted).ToListAsync();
-            ViewBag.Weights = new SelectList(_context.Weights, "Id", "Gram");
-            ViewBag.Vendors = new SelectList(_context.Vendors, "Id", "FullName");
-            ProductVM productVM = new ProductVM
-            {
-                Sizes =await _context.Sizes.Where(s => !s.IsDeleted).ToListAsync()
-            };
-            return View(productVM);
+            var categories = await _context.Categories.Where(c => !c.IsDeleted).ToListAsync();
+            var vendors = await _context.Vendors.Where(c => !c.IsDeleted).ToListAsync();
+            //var size = await _context.Sizes.Where(s => !s.IsDeleted).ToListAsync();
+
+            ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            ViewBag.Vendor = new SelectList(vendors, "Id", "FullName");
+            ViewBag.Sizes = await _context.Sizes.Where(s => !s.IsDeleted).ToListAsync();
+
+            return View();
         }
 
 
         [HttpPost]
-        public async Task<IActionResult> Create(ProductVM product)
+        public async Task<IActionResult> Create(ProductCreateVM productVM)
         {
-            var _product = new ProductVM {
-             ProductSizes =    
+            var categories = await _context.Categories.Where(c => !c.IsDeleted).ToListAsync();
+            var vendor = await _context.Vendors.Where(c => !c.IsDeleted).ToListAsync();
+            //var size = await _context.Sizes.Where(s => !s.IsDeleted).ToListAsync();
+
+            ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            ViewBag.Vendor = new SelectList(vendor, "Id", "FullName");
+            //ViewBag.Sizes = new SelectList(size, "Id", "Name");
+            ViewBag.Sizes = await _context.Sizes.Where(s => !s.IsDeleted).ToListAsync();
+
+
+            var product = new Product
             {
-
-            },
-                Product = new Product
-                {
-                    Name = product.Product.Name,
-                    Description = product.Product.Description,
-                    SellPrice = product.Product.SellPrice,
-                    DiscountPrice = product.Product.DiscountPrice,
-                    Files = product.Product.Files,
-                    IsMainFile = product.Product.IsMainFile,
-                    IsHoverFile = product.Product.IsHoverFile,
-                    IsDeleted = false,
-                    CreateBy = 1,
-                    Created = DateTime.UtcNow,
-                    IPAddress = product.Product.IPAddress,
-
-                    Category = product.Product.Category,
-                    VendorId = product.Product.VendorId,
-                }
+                Name = productVM.Name,
+                Description = productVM.Description,
+                SellPrice = productVM.Price,
+                DiscountPrice = productVM.DiscountPrice,
+                VendorId = productVM.VendorId,
+                IsDeleted = false,
+                CreateBy = 1,
+                Created = DateTime.UtcNow,
+                IPAddress = "1"
             };
-            return View();
+
+            await _context.Products.AddAsync(product);
+            await _context.SaveChangesAsync();
+
+
+
+            var categoryProduct = new CategoryProduct
+            {
+                ProductId = product.Id,
+                CategoryId = productVM.CategoryId
+            };
+
+
+            List<ProductSize> sizes = new List<ProductSize>();
+
+            if (productVM.SizeId != null && productVM.SizeCount != null )
+            {
+                for (int i = 0; i < productVM.SizeId.Count; i++)
+                {
+                    sizes.Add(new ProductSize
+                    {
+                        ProductId = product.Id,
+                        SizeId = productVM.SizeId[i],
+                        Count = productVM.SizeCount[i]
+                    });
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            List<ProductImage> image = new List<ProductImage>();
+
+            if (productVM.Files != null)
+            {
+                foreach (var files in productVM.Files)
+                {
+                    if (!files.FileSize(2))
+                    {
+                        ModelState.AddModelError("Files", "Files cannot be more than 2mb");
+                        return View(productVM);
+                    }
+
+                    if (!files.FileTypeAsync("image"))
+                    {
+                        ModelState.AddModelError("Files", "Files must be image type!");
+                        return View(productVM);
+                    }
+
+                    var path = Path.Combine(_environment.WebRootPath, "cilent", "imgs", "products");
+                    var fileName = await files.SaveToAsync(path);
+
+                    var productImage = CreatImage(fileName,false,false,product);
+                    image.Add(productImage);
+                    //await _context.ProductImages.AddAsync(fileName);
+                }
+            }
+
+
+            if (productVM.MainFile!=null)
+            {
+                if (!productVM.MainFile.FileSize(2))
+                {
+                    ModelState.AddModelError("Files", "Files cannot be more than 2mb");
+                    return View(productVM);
+
+                }
+
+                if (!productVM.MainFile.FileTypeAsync(""))
+                {
+                    ModelState.AddModelError("Files", "Files must be image type!");
+                    return View(productVM);
+                }
+                var path = Path.Combine(_environment.WebRootPath, "cilent", "imgs", "products");
+                var fileName = await productVM.MainFile.SaveToAsync(path);
+
+
+                var productImage = CreatImage(fileName, true, false, product);
+                image.Add(productImage);
+            }
+
+            if (productVM.HoverFile != null)
+            {
+                if (!productVM.HoverFile.FileSize(2))
+                {
+                    ModelState.AddModelError("Files", "Files cannot be more than 2mb");
+                    return View(productVM);
+
+                }
+
+                if (!productVM.HoverFile.FileTypeAsync(""))
+                {
+                    ModelState.AddModelError("Files", "Files must be image type!");
+                    return View(productVM);
+                }
+                var path = Path.Combine(_environment.WebRootPath, "cilent", "imgs", "products");
+                var fileName = await productVM.HoverFile.SaveToAsync(path);
+
+
+                var productImage = CreatImage(fileName, false, true, product);
+                image.Add(productImage);
+            }
+
+
+            await _context.CategoryProduct.AddAsync(categoryProduct);
+            await _context.ProductImages.AddRangeAsync(image);
+            await _context.ProductSize.AddRangeAsync(sizes);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+
+
+
         }
+
+
+
+
+        public ProductImage CreatImage(string Url,bool Main,bool Hover,Product product)
+        {
+            return new ProductImage
+            {
+                Url=Url,
+                IsMain=Main,
+                IsHover=Hover,
+                Product=product,
+                IsDeleted=false,
+                CreateBy = 1,
+                Created = DateTime.UtcNow,
+                IPAddress="1"
+                
+            };
+        }
+
+
+
+
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var product = await _context.Products.Where(p => !p.IsDeleted && p.Id == id).FirstOrDefaultAsync();
+            product.IsDeleted = true;
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+
     }
 }
 

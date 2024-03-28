@@ -25,7 +25,7 @@ namespace Nest.Areas.Admin.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var list = await _context.Categories.Include(c => c.Product).Where(c => !c.IsDeleted && c.Id == id).AsNoTracking().FirstOrDefaultAsync();
+            var list = await _context.Categories.Include(c => c.CategoryProducts).ThenInclude(p=>p.Product).Where(c => !c.IsDeleted && c.Id == id).AsNoTracking().FirstOrDefaultAsync();
             if (list == null)
             {
                 return NotFound();

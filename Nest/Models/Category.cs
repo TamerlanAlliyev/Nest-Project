@@ -10,6 +10,8 @@ namespace Nest.Models
         //public int ProductId { get; set; }
         [NotMapped]
         public IFormFile FormFile { get; set; } = null!;
-        public List<Product> Product { get; set; } = null!;
+        //public List<Product> Product { get; set; } = null!;
+        public ICollection<CategoryProduct> CategoryProducts { get; set; } = null!;
+
     }
 }

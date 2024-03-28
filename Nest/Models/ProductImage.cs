@@ -6,8 +6,8 @@ namespace Nest.Models
     public class ProductImage:BaseAuditable
     {
         public string Url { get; set; }
-        public bool? IsMain { get; set; }
-        public bool? IsHover { get; set; }
+        public bool IsMain { get; set; }
+        public bool IsHover { get; set; }
         public int ProductId { get; set; }
         [NotMapped]
         public IFormFile FormFile { get; set; } = null!;

@@ -1,7 +1,5 @@
 ﻿@model ProductVM
-@{
-    decimal totalEvaluation = 0;
-}
+
 
 <main class="main">
     <div class="page-header mt-30 mb-50">
@@ -97,75 +95,7 @@
 
 
                     <!--start product card-->
-                    @foreach (Product product in Model.Products)
-                    {
-                        @foreach (CustomerRating rating in product.CustomerRatings)
-                        {
-                            totalEvaluation = totalEvaluation + rating.Evaluation;
-                        }
-
-
-                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                            <div class="product-cart-wrap mb-30">
-                                <div class="product-img-action-wrap">
-                                    <div class="product-img product-img-zoom">
-                                        <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
-
-                                            @foreach (ProductImage image in product.ProductImages)
-                                            {
-                                            <img class="default-img" src="~/cilent/imgs/product/@image.Url" alt="" />
-                                                if (image.IsMain == true)
-                                                {
-                                                    <img class="default-img" src="~/cilent/imgs/products/@image.Url" alt="@image.Url" />
-                                                }
-                                                if (image.IsHover==true)
-                                                {
-                                                <img class="hover-img" src="~/cilent/imgs/products/@image.Url" alt="@image.Url" />
-                                                }
-                                            }
-                                        </a>
-                                    </div>
-                                    <div class="product-action-1">
-                                        <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                        <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                    </div>
-                                    <div class="product-badges product-badges-position product-badges-mrg">
-                                        <span class="sale">Sale</span>
-                                    </div>
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        @foreach (Category category in product.Category)
-                                        {
-                                            <a href="shop-grid-right.html">@category.Name</a>
-                                        }
-                                    </div>
-                                    <h2><a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">@product.Name</a></h2>
-                                    <div class="product-rate-cover">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width: @(product.CustomerRatings.Count() == 0 ? 0 : (totalEvaluation / (decimal)product.CustomerRatings.Count() / 5 * 100))%"></div>
-
-                                        </div>
-                                        <span class="font-small ml-5 text-muted">@product.CustomerRatings.Count()</span>
-                                    </div>
-
-                                    <div>
-                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">@product.Vendor.FullName</a></span>
-                                    </div>
-                                    <div class="product-card-bottom">
-                                        <div class="product-price">
-                                            <span>$@product.DiscountPrice</span>
-                                            <span class="old-price">$@product.SellPrice</span>
-                                        </div>
-                                        <div class="add-cart">
-                                            <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    }
+                    @await Component.InvokeAsync("Product")
 
                     <!--end product card-->
 
@@ -363,15 +293,8 @@
             <div class="col-lg-1-5 primary-sidebar sticky-sidebar">
                 <div class="sidebar-widget widget-category-2 mb-30">
                     <h5 class="section-title style-1 mb-30">Category</h5>
-                    <ul>
-                        @foreach (Category catagories in Model.Categories)
-                        {
-                            <li>
-                                @* @catagories.Product *@
-                                <a href="shop-grid-right.html"> <img src="~/admin/icons/categories/@catagories.Icon" alt="" />@catagories.Name</a><span class="count">@catagories.Product.Count()</span>
-                            </li>
-                        }
-                    </ul>
+                    @await Component.InvokeAsync(nameof(Category))
+
                 </div>
                 <!-- Fillter By Price -->
                 <div class="sidebar-widget price_range range mb-30">

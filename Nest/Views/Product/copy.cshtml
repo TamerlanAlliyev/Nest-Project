@@ -613,7 +613,7 @@
                                 @foreach (Category category in Model.Categories)
                                 {
                                     <li>
-                                        <a href="shop-grid-right.html"> <img src="~/admin/icons/categories/@category.Icon" alt="@category.Icon" />@category.Name</a><span class="count">@category.Product.Count()</span>
+                                        <a href="shop-grid-right.html"> <img src="~/admin/icons/categories/@category.Icon" alt="@category.Icon" />@category.Name</a><span class="count">@category.CategoryProducts.Count()</span>
                                     </li>
                                 }
                             </ul>

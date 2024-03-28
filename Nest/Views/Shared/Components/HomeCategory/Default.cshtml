@@ -1,0 +1,30 @@
+﻿@model List<Category>
+
+<ul class="nav nav-tabs links" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a href="#" class="nav-link category-item">All</a>
+    </li>
+    @foreach (var category in Model)
+    {
+        <li class="nav-item" role="presentation">
+            <a href="#"  data-id="@category.Id" class="nav-link category-item" >@category.Name</a>
+        </li>
+    }
+</ul>
+
+@* @section Script{
+    <script>
+        var cat = document.querySelectorAll(".category-item")
+
+        cat.forEach(category => {
+            var id = category.dataset.id;
+            category.addEventListener("click", (e) => {
+                e.preventDefault();
+                console.log("click")
+                fetch(`/Home/ProductCategoryFilter/${id}`)
+                .then(x=>x.text)
+                .then(x=>console.log(x))
+            })
+        })
+    </script>
+} *@

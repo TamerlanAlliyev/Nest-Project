@@ -96,12 +96,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\icons\categories\630e5391-eed4-43bf-aeb8-25596c7cff69_sauces-svgrepo-com.svg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\icons\categories\a3b064e7-f746-4b4a-b932-1010314a1ed4_iced-coffee-cold-drink-svgrepo-com.svg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\icons\categories\715e8e67-4c75-4d6d-af46-321af738f345_iced-coffee-cold-drink-svgrepo-com.svg))">
       <SourceType>Package</SourceType>
       <SourceId>Nest</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Nest</BasePath>
-      <RelativePath>admin/icons/categories/a3b064e7-f746-4b4a-b932-1010314a1ed4_iced-coffee-cold-drink-svgrepo-com.svg</RelativePath>
+      <RelativePath>admin/icons/categories/715e8e67-4c75-4d6d-af46-321af738f345_iced-coffee-cold-drink-svgrepo-com.svg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -110,7 +110,55 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\icons\categories\a3b064e7-f746-4b4a-b932-1010314a1ed4_iced-coffee-cold-drink-svgrepo-com.svg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\icons\categories\715e8e67-4c75-4d6d-af46-321af738f345_iced-coffee-cold-drink-svgrepo-com.svg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\icons\categories\84a90c87-478b-4c7c-b86d-5dae30e80765_fruit-melancia-watermelon-svgrepo-com.svg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>admin/icons/categories/84a90c87-478b-4c7c-b86d-5dae30e80765_fruit-melancia-watermelon-svgrepo-com.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\icons\categories\84a90c87-478b-4c7c-b86d-5dae30e80765_fruit-melancia-watermelon-svgrepo-com.svg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\icons\categories\b39027d0-7b3d-472f-9a39-7d8622613959_Oversize_Ecru_slogan.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>admin/icons/categories/b39027d0-7b3d-472f-9a39-7d8622613959_Oversize_Ecru_slogan.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\icons\categories\b39027d0-7b3d-472f-9a39-7d8622613959_Oversize_Ecru_slogan.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\icons\categories\e6f6e8e5-afa7-47d3-8655-2c0c0738a60e_Oversize_Dark-Blue.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>admin/icons/categories/e6f6e8e5-afa7-47d3-8655-2c0c0738a60e_Oversize_Dark-Blue.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\icons\categories\e6f6e8e5-afa7-47d3-8655-2c0c0738a60e_Oversize_Dark-Blue.png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\img\undraw_posting_photo.svg))">
       <SourceType>Package</SourceType>
@@ -31119,6 +31167,758 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\page\page-404.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\01998c5e-926c-41b3-ad49-e80da953c789_Screenshot 2024-03-17 232353.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/01998c5e-926c-41b3-ad49-e80da953c789_Screenshot 2024-03-17 232353.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\01998c5e-926c-41b3-ad49-e80da953c789_Screenshot 2024-03-17 232353.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\07f04025-ae63-458a-b778-a07a7c644698_Screenshot 2024-03-17 113127.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/07f04025-ae63-458a-b778-a07a7c644698_Screenshot 2024-03-17 113127.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\07f04025-ae63-458a-b778-a07a7c644698_Screenshot 2024-03-17 113127.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\096d9f77-9253-4eb2-8585-b1e14c274f78_j75lnkgs.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/096d9f77-9253-4eb2-8585-b1e14c274f78_j75lnkgs.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\096d9f77-9253-4eb2-8585-b1e14c274f78_j75lnkgs.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\0f0eccf1-573f-4316-9a51-f222d71e06ec_T-shirt-paterrin.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/0f0eccf1-573f-4316-9a51-f222d71e06ec_T-shirt-paterrin.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\0f0eccf1-573f-4316-9a51-f222d71e06ec_T-shirt-paterrin.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\0f3a3faf-dee8-4179-bbb7-56ccf7a86ab2_T-shirt-paterrin.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/0f3a3faf-dee8-4179-bbb7-56ccf7a86ab2_T-shirt-paterrin.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\0f3a3faf-dee8-4179-bbb7-56ccf7a86ab2_T-shirt-paterrin.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\13c15aad-23f4-418e-9243-948a7f616e97_T-shirt-paterrin.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/13c15aad-23f4-418e-9243-948a7f616e97_T-shirt-paterrin.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\13c15aad-23f4-418e-9243-948a7f616e97_T-shirt-paterrin.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\16e273b9-4a3f-4aba-9b88-35fa74f54958_j75lnkgs.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/16e273b9-4a3f-4aba-9b88-35fa74f54958_j75lnkgs.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\16e273b9-4a3f-4aba-9b88-35fa74f54958_j75lnkgs.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\19e016b1-b207-4cfd-9956-d5479d39cf46_030be02451458d5d3686a1a02f3d24c5.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/19e016b1-b207-4cfd-9956-d5479d39cf46_030be02451458d5d3686a1a02f3d24c5.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\19e016b1-b207-4cfd-9956-d5479d39cf46_030be02451458d5d3686a1a02f3d24c5.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\1ef90eb0-e7f7-43ea-81ef-9957ec713ba0_T-shirt-paterrin.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/1ef90eb0-e7f7-43ea-81ef-9957ec713ba0_T-shirt-paterrin.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\1ef90eb0-e7f7-43ea-81ef-9957ec713ba0_T-shirt-paterrin.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\26569c2a-1aac-4614-9a32-8a406c9a6e5f_brandmap.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/26569c2a-1aac-4614-9a32-8a406c9a6e5f_brandmap.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\26569c2a-1aac-4614-9a32-8a406c9a6e5f_brandmap.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\2a1082f7-c2df-4996-96be-c6add5a1b4ce_Screenshot 2024-03-17 232353.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/2a1082f7-c2df-4996-96be-c6add5a1b4ce_Screenshot 2024-03-17 232353.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\2a1082f7-c2df-4996-96be-c6add5a1b4ce_Screenshot 2024-03-17 232353.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\2dbf0a42-7276-4ab0-a3d8-3f5ff165b28d_Screenshot 2024-03-17 113127.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/2dbf0a42-7276-4ab0-a3d8-3f5ff165b28d_Screenshot 2024-03-17 113127.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\2dbf0a42-7276-4ab0-a3d8-3f5ff165b28d_Screenshot 2024-03-17 113127.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\3bc84d44-773f-44ed-9757-05cc4add50ef_T-shirt-paterrin.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/3bc84d44-773f-44ed-9757-05cc4add50ef_T-shirt-paterrin.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\3bc84d44-773f-44ed-9757-05cc4add50ef_T-shirt-paterrin.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\3d0b4b1b-9129-4ce7-bf3f-365a523e8c08_T-shirt-paterrin.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/3d0b4b1b-9129-4ce7-bf3f-365a523e8c08_T-shirt-paterrin.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\3d0b4b1b-9129-4ce7-bf3f-365a523e8c08_T-shirt-paterrin.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\45bdf1fb-8e95-4dab-85a2-019ca1a3562f_T-shirt-paterrin.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/45bdf1fb-8e95-4dab-85a2-019ca1a3562f_T-shirt-paterrin.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\45bdf1fb-8e95-4dab-85a2-019ca1a3562f_T-shirt-paterrin.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\51259e5d-524e-4214-982a-9ae62efe79cd_Screenshot 2024-03-17 113127.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/51259e5d-524e-4214-982a-9ae62efe79cd_Screenshot 2024-03-17 113127.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\51259e5d-524e-4214-982a-9ae62efe79cd_Screenshot 2024-03-17 113127.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\527625ab-fc13-4dd8-95f2-9564f53f9d40_Screenshot 2024-03-17 232353.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/527625ab-fc13-4dd8-95f2-9564f53f9d40_Screenshot 2024-03-17 232353.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\527625ab-fc13-4dd8-95f2-9564f53f9d40_Screenshot 2024-03-17 232353.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\5505db1e-1c6b-4e0f-9d5b-b68df6a6a5c1_Untitled.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/5505db1e-1c6b-4e0f-9d5b-b68df6a6a5c1_Untitled.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\5505db1e-1c6b-4e0f-9d5b-b68df6a6a5c1_Untitled.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\568d62db-a734-4375-86d3-c728d85bba5a_brandmap.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/568d62db-a734-4375-86d3-c728d85bba5a_brandmap.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\568d62db-a734-4375-86d3-c728d85bba5a_brandmap.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\58ff579f-6c94-4dfc-8fd4-1ac237ee4dbc_Untitled.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/58ff579f-6c94-4dfc-8fd4-1ac237ee4dbc_Untitled.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\58ff579f-6c94-4dfc-8fd4-1ac237ee4dbc_Untitled.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\5a18480b-1d47-4967-be18-a80e023f9153_Screenshot 2024-03-17 232353.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/5a18480b-1d47-4967-be18-a80e023f9153_Screenshot 2024-03-17 232353.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\5a18480b-1d47-4967-be18-a80e023f9153_Screenshot 2024-03-17 232353.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\5d642531-7acb-4168-9ffd-c38b250ff38a_Screenshot 2024-03-17 113127.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/5d642531-7acb-4168-9ffd-c38b250ff38a_Screenshot 2024-03-17 113127.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\5d642531-7acb-4168-9ffd-c38b250ff38a_Screenshot 2024-03-17 113127.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\6cddd577-44cf-402e-8bb7-8f673d4551a8_Screenshot 2024-03-22 195823.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/6cddd577-44cf-402e-8bb7-8f673d4551a8_Screenshot 2024-03-22 195823.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\6cddd577-44cf-402e-8bb7-8f673d4551a8_Screenshot 2024-03-22 195823.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\7b44d35d-dd8e-4909-934d-ab765e9ed235_Screenshot 2024-03-17 110244.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/7b44d35d-dd8e-4909-934d-ab765e9ed235_Screenshot 2024-03-17 110244.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\7b44d35d-dd8e-4909-934d-ab765e9ed235_Screenshot 2024-03-17 110244.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\90d7dd00-36d8-437e-bb1b-f321cefb67e9_Untitled.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/90d7dd00-36d8-437e-bb1b-f321cefb67e9_Untitled.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\90d7dd00-36d8-437e-bb1b-f321cefb67e9_Untitled.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\937e63f2-41df-44ea-8b47-820ff45b66e9_Screenshot 2024-03-17 232353.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/937e63f2-41df-44ea-8b47-820ff45b66e9_Screenshot 2024-03-17 232353.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\937e63f2-41df-44ea-8b47-820ff45b66e9_Screenshot 2024-03-17 232353.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\a601a292-54ee-4b0c-9fb2-9715bd80c74c_Untitled.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/a601a292-54ee-4b0c-9fb2-9715bd80c74c_Untitled.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\a601a292-54ee-4b0c-9fb2-9715bd80c74c_Untitled.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\a7c92501-6873-4e86-a084-f19326e2712d_brandmap.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/a7c92501-6873-4e86-a084-f19326e2712d_brandmap.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\a7c92501-6873-4e86-a084-f19326e2712d_brandmap.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\ace3b7c4-9a44-40d7-881d-975faf32d40e_T-shirt-paterrin.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/ace3b7c4-9a44-40d7-881d-975faf32d40e_T-shirt-paterrin.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\ace3b7c4-9a44-40d7-881d-975faf32d40e_T-shirt-paterrin.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\afe717d3-ce91-4a71-aac5-b9f0e4376b1f_Screenshot 2024-03-17 232353.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/afe717d3-ce91-4a71-aac5-b9f0e4376b1f_Screenshot 2024-03-17 232353.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\afe717d3-ce91-4a71-aac5-b9f0e4376b1f_Screenshot 2024-03-17 232353.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\b25cb9fe-8727-446b-8691-3b0c02c625b6_Screenshot 2024-03-20 211931.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/b25cb9fe-8727-446b-8691-3b0c02c625b6_Screenshot 2024-03-20 211931.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\b25cb9fe-8727-446b-8691-3b0c02c625b6_Screenshot 2024-03-20 211931.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\b7207f8a-8605-4459-b58c-b8aae65deec7_Screenshot 2024-03-17 113127.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/b7207f8a-8605-4459-b58c-b8aae65deec7_Screenshot 2024-03-17 113127.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\b7207f8a-8605-4459-b58c-b8aae65deec7_Screenshot 2024-03-17 113127.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\bcf6e754-cd5e-4d5f-b52c-1d5a2e73a98e_Screenshot 2024-03-17 113127.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/bcf6e754-cd5e-4d5f-b52c-1d5a2e73a98e_Screenshot 2024-03-17 113127.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\bcf6e754-cd5e-4d5f-b52c-1d5a2e73a98e_Screenshot 2024-03-17 113127.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\c84c1e27-b955-4f30-ab39-cbd67253e212_j75lnkgs.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/c84c1e27-b955-4f30-ab39-cbd67253e212_j75lnkgs.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\c84c1e27-b955-4f30-ab39-cbd67253e212_j75lnkgs.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\c8c098cd-fe94-4594-a4ca-bd3af95ad015_Screenshot 2024-03-17 232353.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/c8c098cd-fe94-4594-a4ca-bd3af95ad015_Screenshot 2024-03-17 232353.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\c8c098cd-fe94-4594-a4ca-bd3af95ad015_Screenshot 2024-03-17 232353.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\cbadbc00-7748-4ea6-aeb2-8b654df2d904_Screenshot 2024-03-17 232353.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/cbadbc00-7748-4ea6-aeb2-8b654df2d904_Screenshot 2024-03-17 232353.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\cbadbc00-7748-4ea6-aeb2-8b654df2d904_Screenshot 2024-03-17 232353.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\d305c60b-5d8a-4106-8f9a-b877043f5233_brandmap.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/d305c60b-5d8a-4106-8f9a-b877043f5233_brandmap.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\d305c60b-5d8a-4106-8f9a-b877043f5233_brandmap.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\d6e51dc7-27dd-42fa-a263-0faa918cb58f_Screenshot 2024-03-17 232353.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/d6e51dc7-27dd-42fa-a263-0faa918cb58f_Screenshot 2024-03-17 232353.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\d6e51dc7-27dd-42fa-a263-0faa918cb58f_Screenshot 2024-03-17 232353.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\dd2527f0-3750-4bb8-a95a-eef1d451f262_j75lnkgs.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/dd2527f0-3750-4bb8-a95a-eef1d451f262_j75lnkgs.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\dd2527f0-3750-4bb8-a95a-eef1d451f262_j75lnkgs.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\e05ce582-d68c-49ab-8fa0-69c14a5abba4_T-shirt-paterrin.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/e05ce582-d68c-49ab-8fa0-69c14a5abba4_T-shirt-paterrin.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\e05ce582-d68c-49ab-8fa0-69c14a5abba4_T-shirt-paterrin.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\e32e0308-7f68-4521-8c40-b36d3cda1e4f_brandmap.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/e32e0308-7f68-4521-8c40-b36d3cda1e4f_brandmap.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\e32e0308-7f68-4521-8c40-b36d3cda1e4f_brandmap.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\e4b74378-9886-414c-b2a9-e2ecd5853d22_Untitled.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/e4b74378-9886-414c-b2a9-e2ecd5853d22_Untitled.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\e4b74378-9886-414c-b2a9-e2ecd5853d22_Untitled.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\eba93297-5bac-4d3e-a12e-75057f95d353_Screenshot 2024-03-17 232353.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/eba93297-5bac-4d3e-a12e-75057f95d353_Screenshot 2024-03-17 232353.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\eba93297-5bac-4d3e-a12e-75057f95d353_Screenshot 2024-03-17 232353.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\f94ce3b0-b52b-472a-865f-7994765eacac_Screenshot 2024-03-17 232353.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/f94ce3b0-b52b-472a-865f-7994765eacac_Screenshot 2024-03-17 232353.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\f94ce3b0-b52b-472a-865f-7994765eacac_Screenshot 2024-03-17 232353.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\fcdfbcca-cce2-4967-92d5-9a021cf2fa9f_Screenshot 2024-03-17 232353.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/fcdfbcca-cce2-4967-92d5-9a021cf2fa9f_Screenshot 2024-03-17 232353.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\fcdfbcca-cce2-4967-92d5-9a021cf2fa9f_Screenshot 2024-03-17 232353.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\fe408f40-749c-42b5-80db-dc816eac600a_T-shirt-paterrin.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/fe408f40-749c-42b5-80db-dc816eac600a_T-shirt-paterrin.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\fe408f40-749c-42b5-80db-dc816eac600a_T-shirt-paterrin.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\fe8ea1d5-c045-4c6f-b124-0166d443f339_Screenshot 2024-03-17 113127.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Nest</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Nest</BasePath>
+      <RelativePath>cilent/imgs/products/fe8ea1d5-c045-4c6f-b124-0166d443f339_Screenshot 2024-03-17 113127.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\fe8ea1d5-c045-4c6f-b124-0166d443f339_Screenshot 2024-03-17 113127.png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\cilent\imgs\products\Orange-1.jpeg))">
       <SourceType>Package</SourceType>

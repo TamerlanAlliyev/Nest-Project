@@ -11,24 +11,26 @@ namespace Nest.Models
         public decimal? DiscountPrice { get; set; }
 
         //public int CategoryId { get; set; }
-        public List<Category> Category { get; set; } = null!;
+        //public List<Category> Category { get; set; } = null!;
 
-        public int VendorId { get; set; }
+        public ICollection<CategoryProduct>? CategoryProducts { get; set; }
+
+        public int? VendorId { get; set; }
         public Vendor Vendor { get; set; } = null!;
 
-        public List<ProductImage> ProductImages { get; set; } = null!;
-        public List<CustomerRating> CustomerRatings { get; set; } = null!;
+        public List<ProductImage>? ProductImages { get; set; } 
+        public List<CustomerRating>? CustomerRatings { get; set; } 
 
         public List<ProductSize>? ProductSizes { get; set; } 
         public List<ProductWeight>? ProductWeights { get; set; }
 
 
         [NotMapped]
-        public IFormFile Files { get; set; } = null!;
+        public List<IFormFile >?Files { get; set; } 
         [NotMapped]
-        public IFormFile IsMainFile { get; set; } = null!;
+        public IFormFile? IsMainFile { get; set; } 
         [NotMapped]
-        public IFormFile IsHoverFile { get; set; } = null!;
+        public IFormFile? IsHoverFile { get; set; } 
 
 
     }

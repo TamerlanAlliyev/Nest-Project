@@ -22,21 +22,6 @@ namespace Nest.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("CategoryProduct", b =>
-                {
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CategoryId", "ProductId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("CategoryProduct");
-                });
-
             modelBuilder.Entity("Nest.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -75,6 +60,29 @@ namespace Nest.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories", (string)null);
+                });
+
+            modelBuilder.Entity("Nest.Models.CategoryProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("CategoryProduct");
                 });
 
             modelBuilder.Entity("Nest.Models.Customer", b =>
@@ -311,7 +319,8 @@ namespace Nest.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("VendorId")
+                    b.Property<int?>("VendorId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -342,10 +351,10 @@ namespace Nest.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<bool?>("IsHover")
+                    b.Property<bool>("IsHover")
                         .HasColumnType("bit");
 
-                    b.Property<bool?>("IsMain")
+                    b.Property<bool>("IsMain")
                         .HasColumnType("bit");
 
                     b.Property<DateTime?>("Modified")
@@ -550,19 +559,23 @@ namespace Nest.Migrations
                     b.ToTable("Weights", (string)null);
                 });
 
-            modelBuilder.Entity("CategoryProduct", b =>
+            modelBuilder.Entity("Nest.Models.CategoryProduct", b =>
                 {
-                    b.HasOne("Nest.Models.Category", null)
-                        .WithMany()
+                    b.HasOne("Nest.Models.Category", "Category")
+                        .WithMany("CategoryProducts")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Nest.Models.Product", null)
-                        .WithMany()
+                    b.HasOne("Nest.Models.Product", "Product")
+                        .WithMany("CategoryProducts")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Nest.Models.CustomerRating", b =>
@@ -655,6 +668,11 @@ namespace Nest.Migrations
                     b.Navigation("Weight");
                 });
 
+            modelBuilder.Entity("Nest.Models.Category", b =>
+                {
+                    b.Navigation("CategoryProducts");
+                });
+
             modelBuilder.Entity("Nest.Models.Customer", b =>
                 {
                     b.Navigation("CustomerRatings");
@@ -667,6 +685,8 @@ namespace Nest.Migrations
 
             modelBuilder.Entity("Nest.Models.Product", b =>
                 {
+                    b.Navigation("CategoryProducts");
+
                     b.Navigation("CustomerRatings");
 
                     b.Navigation("ProductImages");

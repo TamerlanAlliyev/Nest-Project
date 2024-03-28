@@ -37,7 +37,7 @@ namespace YourNamespace.Extensions
 
         public static bool FileSize(this IFormFile file,int size)
         {
-            if (file.Length > 2 * 1024 * 1024)
+            if (file.Length < 2 * 1024 * 1024)
             {
                 return true;
             }

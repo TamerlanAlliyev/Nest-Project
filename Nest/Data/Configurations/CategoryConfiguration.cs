@@ -23,8 +23,8 @@ namespace Nest.Data.Configurations
             //    .HasPrincipalKey(m => m.Id)
             //    .HasForeignKey(m => m.ProductId);
 
-            builder.HasMany(c => c.Product)
-                .WithMany(c => c.Category);
+            //builder.HasMany(c => c.Product)
+            //    .WithMany(c => c.Category);
                 
 
         }

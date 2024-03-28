@@ -1,4 +1,5 @@
-﻿namespace Nest.Models
+﻿
+namespace Nest.Models
 {
     public class ProductSize
     {
@@ -7,6 +8,11 @@
         public Product Product { get; set; } = null!;
         public int SizeId { get; set; }
         public Size Size { get; set; } = null!;
-        public int Count { get; set; } 
+        public int Count { get; set; }
+
+        public static implicit operator ProductSize(List<ProductSize> v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

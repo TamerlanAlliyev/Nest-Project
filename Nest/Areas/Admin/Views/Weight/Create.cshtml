@@ -1,0 +1,17 @@
+﻿@model WeightVM
+
+
+<div class="container d-flex justify-content-center align-self-lg-center w-25" style="width: 500px; border-radius: 15px; border:1px solid dodgerblue; color: black;">
+    <div class="card-body">
+        <form method="post">
+            <div class="form-group mb-3">
+                <label>Name</label>
+                <input type="number" class="form-control " asp-for="Weight.Gram" />
+                <span class="text-danger" asp-validation-for="Weight.Gram"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
