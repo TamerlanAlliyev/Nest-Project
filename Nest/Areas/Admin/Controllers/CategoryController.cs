@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Nest.Data;
 using Nest.Models;
@@ -7,6 +8,7 @@ using YourNamespace.Extensions;
 namespace Nest.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles ="Admin")]
     public class CategoryController : Controller
     {
         public readonly NestContext _context;

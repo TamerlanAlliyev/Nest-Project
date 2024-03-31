@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Nest.Models;
 using Nest.Data.Configurations;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Nest.Data
 {
-    public class NestContext : DbContext
+    public class NestContext : IdentityDbContext<AppUser>
     {
         public NestContext(DbContextOptions<NestContext> options) : base(options)
         {

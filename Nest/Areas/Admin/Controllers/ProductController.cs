@@ -7,10 +7,13 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using YourNamespace.Extensions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Nest.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
+
     public class ProductController : Controller
     {
         public readonly NestContext _context;

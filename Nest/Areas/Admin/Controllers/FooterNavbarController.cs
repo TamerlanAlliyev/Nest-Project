@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Nest.Areas.Admin.ViewModels;
 using Nest.Data;
@@ -7,6 +8,8 @@ using Nest.Models;
 namespace Nest.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
+
     public class FooterNavbarController : Controller
     {
         public readonly NestContext _context;

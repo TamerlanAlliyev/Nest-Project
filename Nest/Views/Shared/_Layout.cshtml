@@ -163,7 +163,7 @@
                                     <a href="~/shop-cart.html"><span class="lable">Cart</span></a>
                                     @await Component.InvokeAsync("Cart")
 
-                                  
+
                                 </div>
                                 <div class="header-action-icon-2">
                                     <a href="~/page-account.html">
@@ -171,26 +171,72 @@
                                     </a>
                                     <a href="~/page-account.html"><span class="lable ml-0">Account</span></a>
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
-                                        <ul>
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <ul>
+                                                <li>
+                                                    <h5><i class="fi fi-rs-user mr-10"></i>@User.Identity.Name</h5>
+                                                </li>
+                                                <li>
+                                                    <a>
+                                                        @{
+                                                            if (User.IsInRole("Admin"))
+                                                            {
+                                                                @Html.Raw("Admin")
+                                                            }
+                                                            else if (User.IsInRole("Customer"))
+                                                            {
+                                                                @Html.Raw("Customer")
+                                                            }
+                                                            else if (User.IsInRole("Vendor"))
+                                                            {
+                                                                @Html.Raw("Vendor")
+                                                            }
+                                                            else
+                                                            {
+                                                                @Html.Raw("Unknown")
+                                                            }
+                                                        }
+                                                    </a>
+
+                                                </li>
+                                                @if (User.IsInRole("Admin"))
+                                                {
+                                                    <li>
+                                                        <a asp-action="Index" asp-controller="Dashboard" asp-area="Admin" class=" text-white p-2 btn btn-primary">Go to Admin Page</a>
+                                                    </li>
+                                                }
+                                             
+                                                <li>
+                                                    <a href="~/page-account.html"><i class="fi fi-rs-user mr-10"></i>My Account</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/page-account.html"><i class="fi fi-rs-location-alt mr-10"></i>Order Tracking</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/page-account.html"><i class="fi fi-rs-label mr-10"></i>My Voucher</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/shop-wishlist.html"><i class="fi fi-rs-heart mr-10"></i>My Wishlist</a>
+                                                </li>
+                                                <li>
+                                                    <a href="~/page-account.html"><i class="fi fi-rs-settings-sliders mr-10"></i>Setting</a>
+                                                </li>
+                                                <li>
+                                                    <a asp-action="Logout" asp-controller="Account"><i class="fi fi-rs-sign-out mr-10"></i>Log out</a>
+                                                </li>
+                                            </ul>
+
+                                        }
+                                        else
+                                        {
                                             <li>
-                                                <a href="~/page-account.html"><i class="fi fi-rs-user mr-10"></i>My Account</a>
+                                                <a asp-action="Register" asp-controller="Account">Register</a>
                                             </li>
                                             <li>
-                                                <a href="~/page-account.html"><i class="fi fi-rs-location-alt mr-10"></i>Order Tracking</a>
+                                                <a asp-action="Login" asp-controller="Account">Login</a>
                                             </li>
-                                            <li>
-                                                <a href="~/page-account.html"><i class="fi fi-rs-label mr-10"></i>My Voucher</a>
-                                            </li>
-                                            <li>
-                                                <a href="~/shop-wishlist.html"><i class="fi fi-rs-heart mr-10"></i>My Wishlist</a>
-                                            </li>
-                                            <li>
-                                                <a href="~/page-account.html"><i class="fi fi-rs-settings-sliders mr-10"></i>Setting</a>
-                                            </li>
-                                            <li>
-                                                <a href="~/page-login.html"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a>
-                                            </li>
-                                        </ul>
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -624,16 +670,16 @@
                     @await Component.InvokeAsync("Footer")
 
                     @* <div class="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".4s">
-                        <h4 class="widget-title">Popular</h4>
-                        <ul class="footer-list mb-sm-5 mb-md-0">
-                            <li><a href="~/#">Milk & Flavoured Milk</a></li>
-                            <li><a href="~/#">Butter and Margarine</a></li>
-                            <li><a href="~/#">Eggs Substitutes</a></li>
-                            <li><a href="~/#">Marmalades</a></li>
-                            <li><a href="~/#">Sour Cream and Dips</a></li>
-                            <li><a href="~/#">Tea & Kombucha</a></li>
-                            <li><a href="~/#">Cheese</a></li>
-                        </ul>
+                    <h4 class="widget-title">Popular</h4>
+                    <ul class="footer-list mb-sm-5 mb-md-0">
+                    <li><a href="~/#">Milk & Flavoured Milk</a></li>
+                    <li><a href="~/#">Butter and Margarine</a></li>
+                    <li><a href="~/#">Eggs Substitutes</a></li>
+                    <li><a href="~/#">Marmalades</a></li>
+                    <li><a href="~/#">Sour Cream and Dips</a></li>
+                    <li><a href="~/#">Tea & Kombucha</a></li>
+                    <li><a href="~/#">Cheese</a></li>
+                    </ul>
                     </div> *@
                     <div class="footer-link-widget widget-install-app col wow animate__animated animate__fadeInUp" data-wow-delay=".5s">
                         <h4 class="widget-title">Install App</h4>
@@ -680,7 +726,7 @@
         </div>
     </footer>
 
-    @RenderSection("Script",false)
+    @RenderSection("Script", false)
 
     @if (ViewBag.PreloaderPartialView != null && ViewBag.PreloaderPartialView)
     {
