@@ -8,6 +8,7 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using YourNamespace.Extensions;
 using Microsoft.AspNetCore.Authorization;
+using System.Xml.Linq;
 
 namespace Nest.Areas.Admin.Controllers
 {
@@ -49,7 +50,7 @@ namespace Nest.Areas.Admin.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var product = await _context.Products.Where(p=>!p.IsDeleted&&p.Id==id)
+            var product = await _context.Products.Where(p => !p.IsDeleted && p.Id == id)
                          .Include(p => p.CategoryProducts)
                          .ThenInclude(p => p.Category)
                          .Include(p => p.Vendor)
@@ -123,7 +124,7 @@ namespace Nest.Areas.Admin.Controllers
 
             List<ProductSize> sizes = new List<ProductSize>();
 
-            if (productVM.SizeId != null && productVM.SizeCount != null )
+            if (productVM.SizeId != null && productVM.SizeCount != null)
             {
                 for (int i = 0; i < productVM.SizeId.Count; i++)
                 {
@@ -135,18 +136,6 @@ namespace Nest.Areas.Admin.Controllers
                     });
                 }
             }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -171,14 +160,14 @@ namespace Nest.Areas.Admin.Controllers
                     var path = Path.Combine(_environment.WebRootPath, "cilent", "imgs", "products");
                     var fileName = await files.SaveToAsync(path);
 
-                    var productImage = CreatImage(fileName,false,false,product);
+                    var productImage = CreatImage(fileName, false, false, product);
                     image.Add(productImage);
                     //await _context.ProductImages.AddAsync(fileName);
                 }
             }
 
 
-            if (productVM.MainFile!=null)
+            if (productVM.MainFile != null)
             {
                 if (!productVM.MainFile.FileSize(2))
                 {
@@ -237,19 +226,19 @@ namespace Nest.Areas.Admin.Controllers
 
 
 
-        public ProductImage CreatImage(string Url,bool Main,bool Hover,Product product)
+        public ProductImage CreatImage(string Url, bool Main, bool Hover, Product product)
         {
             return new ProductImage
             {
-                Url=Url,
-                IsMain=Main,
-                IsHover=Hover,
-                Product=product,
-                IsDeleted=false,
+                Url = Url,
+                IsMain = Main,
+                IsHover = Hover,
+                Product = product,
+                IsDeleted = false,
                 CreateBy = 1,
                 Created = DateTime.UtcNow,
-                IPAddress="1"
-                
+                IPAddress = "1"
+
             };
         }
 
@@ -264,6 +253,107 @@ namespace Nest.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
+
+
+
+
+        public async Task<IActionResult> Update(int id)
+        {
+            var categories = await _context.Categories.Where(c => !c.IsDeleted).ToListAsync();
+            var vendors = await _context.Vendors.Where(c => !c.IsDeleted).ToListAsync();
+            //var size = await _context.Sizes.Where(s => !s.IsDeleted).ToListAsync();
+
+            ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            ViewBag.Vendor = new SelectList(vendors, "Id", "FullName");
+            ViewBag.Sizes = await _context.Sizes.Where(s => !s.IsDeleted).ToListAsync();
+            //ViewBag.Sizes = await _context.ProductSize.Where(ps=>ps.ProductId==id)
+            //                                          .Include(ps=>ps.Size)
+            //                                          .Select(ps=> new ProductSize
+            //                                          {
+            //                                              SizeId = ps.SizeId,
+            //                                              Count = ps.Count,
+            //                                          })
+            //                                          //.Include(ps=>ps.Product)
+            //                                          .ToListAsync();
+
+
+
+
+            var product = await _context.Products
+              .Where(p => !p.IsDeleted && p.Id == id)
+              .Include(p => p.CategoryProducts)
+                .ThenInclude(p => p.Category)
+              .Include(p => p.Vendor)
+              .Include(p => p.CustomerRatings)
+                .ThenInclude(p => p.Customer)
+              .Include(p => p.ProductSizes)
+                .ThenInclude(p => p.Size)
+              .Include(p => p.ProductWeights)
+                .ThenInclude(p => p.Weight)
+              .Include(p => p.ProductImages)
+              .FirstOrDefaultAsync();
+
+            if (product == null)
+            {
+                return View("Error");
+            }
+
+
+            ProductUpdateVM updateVM = new ProductUpdateVM
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.SellPrice,
+                DiscountPrice = product.DiscountPrice,
+                VendorId = product.Vendor.Id,
+                CategoryId = product.CategoryProducts.Select(cp => cp.CategoryId).FirstOrDefault(),
+                //SizeId = product.ProductSizes.Where(ps => ps.ProductId == product.Id).Select(ps => new { ps.Size.Id , ps.Size.Name}).ToList(),
+                SizeCount = product.ProductSizes.Where(ps => ps.ProductId == product.Id).Select(pc => pc.Count).ToList(),
+
+                InFiles = product.ProductImages.Where(pi => !pi.IsMain && !pi.IsHover).ToList(),
+                InMainFile = product.ProductImages.Where(pi => pi.IsMain && !pi.IsHover).FirstOrDefault(),
+                InHoverFile = product.ProductImages.Where(pi => !pi.IsMain && pi.IsHover).FirstOrDefault()
+
+            };
+
+
+
+            return View(updateVM);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(int id, ProductUpdateVM productVM)
+        {
+            var categories = await _context.Categories.Where(c => !c.IsDeleted).ToListAsync();
+            var vendors = await _context.Vendors.Where(c => !c.IsDeleted).ToListAsync();
+            //var size = await _context.Sizes.Where(s => !s.IsDeleted).ToListAsync();
+
+            ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            ViewBag.Vendor = new SelectList(vendors, "Id", "FullName");
+            ViewBag.Sizes = await _context.Sizes.Where(s => !s.IsDeleted).ToListAsync();
+
+
+            if (id == productVM.Id)
+            {
+
+            }
+
+            return View();
+        }
+
+
+        public void DeleteImages(string root, string path)
+        {
+
+            var oldImagePath = Path.Combine(root, path);
+            if (System.IO.File.Exists(oldImagePath))
+            {
+                System.IO.File.Delete(oldImagePath);
+            }
+        }
+
 
 
     }

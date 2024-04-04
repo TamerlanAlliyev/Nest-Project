@@ -1,0 +1,197 @@
+﻿@model ProductUpdateVM
+@{
+    int con = 1;
+}
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" asp-for="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        @* <div class="form-text">We'll never share your email with anyone else.</div> *@
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Description</label>
+        <input type="text" asp-for="Description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        @* <div class="form-text">We'll never share your email with anyone else.</div> *@
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Sell Price</label>
+        <input type="text" asp-for="Price" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        @* <div class="form-text">We'll never share your email with anyone else.</div> *@
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Discount Price</label>
+        <input type="text" asp-for="DiscountPrice" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        @* <div class="form-text">We'll never share your email with anyone else.</div> *@
+        <span asp-validation-for="DiscountPrice" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <div class="form-group">
+            <label class="form-label" for="categories">Categories</label>
+            <select asp-for="CategoryId" asp-items="@ViewBag.Categories" class="form-select" id="categories">
+                <option selected disabled>Select Category</option>
+            </select>
+
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="form-group">
+            <label class="form-label" for="categories">Vendor</label>
+            <select asp-for="VendorId" asp-items="@ViewBag.Vendor" class="form-select" id="vendors">
+                <option selected disabled>Select Vendor</option>
+            </select>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Main File</label>
+        <input asp-for="MainFile" class="form-control">
+        <span asp-validation-for="MainFile" class="text-danger"></span>
+    </div>
+
+    <div class="d-flex g-lg-3">
+        <div class="image-file mt-3" style="margin-left: 25px;">
+            <span class="btn btn-danger">X</span>
+            <p class="image-file" data-id="@Model.InMainFile.Id">
+                <img style="width:150px;height:150px; object-fit:cover;" src="~/cilent/imgs/products/@Model.InMainFile.Url" />
+            </p>
+        </div>
+    </div>
+
+
+
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Hover File</label>
+        <input asp-for="HoverFile" class="form-control">
+        <span asp-validation-for="HoverFile" class="text-danger"></span>
+    </div>
+
+    <div class="d-flex g-lg-3">
+        <div class="image-file mt-3" style="margin-left: 25px;">
+            <span class="btn btn-danger">X</span>
+            <p class="image-file" data-id="@Model.InHoverFile.Id">
+                <img style="width:150px;height:150px; object-fit:cover;" src="~/cilent/imgs/products/@Model.InHoverFile.Url" />
+            </p>
+        </div>
+    </div>
+
+
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Additional Files</label>
+        <input asp-for="Files" class="form-control" type="file" multiple>
+        <span asp-validation-for="Files" class="text-danger"></span>
+    </div>
+
+    <div>
+        <div class="d-flex g-lg-3">
+            @foreach (var image in Model.InFiles)
+            {
+                <div class="image-file mt-3" style="margin-left: 25px;">
+                    <span class="btn btn-danger">X</span>
+                    <p class="image-file" data-id="@image.Id">
+                        <img style="width:150px;height:150px; object-fit:cover;" src="~/cilent/imgs/products/@image.Url" />
+                    </p>
+                </div>
+            }
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <h2 class="mt-5 mb-1 text-center w-100">Sizes</h2>
+    <div class="container mb-5">
+        <div class="container">
+            <table class="table table-hover ">
+                <thead class="head bg-primary text-white" style="cursor: pointer;">
+                    <tr>
+                        <th>#</th>
+                        <th>Weight(Gram)</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody class="body hidden" style="display: none;">
+                    @foreach (var size in ViewBag.Sizes)
+                    {
+                        <tr>
+                            <td>@(con++)</td>
+                            <td>@size.Name</td>
+                            <td>
+                                <input type="number" min="0" value="@size" class="form-control w-25" asp-for="SizeCount" asp-route-id="@size.Id" />
+                                <input type="hidden" name="SizeId" value="@size.Id" asp-for="SizeId" />
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div asp-validation-summary="ModelOnly" class="text-danger">  </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+
+
+
+
+
+
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+@* <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script> *@
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.head').click(function () {
+            $(this).siblings('.body').toggle();
+        });
+    });
+</script>
+
+<script>
+    const lists = document.querySelector(".lists")
+    const list = document.querySelector(".list")
+    let status = false
+    lists.addEventListener("click", () => {
+        if (status) {
+            list.style.display = "none";
+            status = false;
+        } else {
+            list.style.display = "block";
+            status = true;
+        }
+    })
+
+
+
+
+</script>

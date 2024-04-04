@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Win32;
 using Nest.Models;
+using Nest.Services.Interfaces;
 using Nest.ViewModels;
 
 namespace Nest.Controllers
@@ -12,14 +13,17 @@ namespace Nest.Controllers
         readonly UserManager<AppUser> _userManager;
         readonly RoleManager<IdentityRole> _roleManager;
         readonly SignInManager<AppUser> _signInManager;
+        readonly IEmailService _emailService;
 
         public AccountController(UserManager<AppUser> userManager,
                                  RoleManager<IdentityRole> roleManager,
-                                 SignInManager<AppUser> signInManager)
+                                 SignInManager<AppUser> signInManager,
+                                 IEmailService emailService)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
+            _emailService = emailService;
         }
 
         public async Task<IActionResult> Login()
@@ -55,11 +59,15 @@ namespace Nest.Controllers
             {
                 ModelState.AddModelError("", "Wait until " + user.LockoutEnd.Value.AddHours(4).ToString("HH:mm:ss"));
             }
+            if (!user.EmailConfirmed)
+            {
+                ModelState.AddModelError("", "Please confirm your account");
+                return View();
+            }
             if (!result.Succeeded)
             {
                 ModelState.AddModelError("", "Username,Email or Password is wrong");
                 return View();
-
             }
             if (ReturnUrl != null)
             {
@@ -69,7 +77,7 @@ namespace Nest.Controllers
         }
 
 
-        public async  Task<IActionResult> Logout()
+        public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
@@ -126,28 +134,53 @@ namespace Nest.Controllers
                 return View(registerVM);
             }
 
-                var roleResult = await _userManager.AddToRoleAsync(user, "Customer");
+            //var roleResult = await _userManager.AddToRoleAsync(user, "Customer");
 
             if (registerVM.IsVendor)
             {
-                 roleResult = await _userManager.AddToRoleAsync(user, "Vendor");
+                var roleResult = await _userManager.AddToRoleAsync(user, "Vendor");
+
+                if (!roleResult.Succeeded)
+                {
+                    foreach (var error in roleResult.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                    return View(registerVM);
+                }
             }
             else
             {
-                 roleResult = await _userManager.AddToRoleAsync(user, "Customer");
+                var roleResult = await _userManager.AddToRoleAsync(user, "Customer");
+
+                if (!roleResult.Succeeded)
+                {
+                    foreach (var error in roleResult.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                    return View(registerVM);
+                }
             }
 
-            if (!roleResult.Succeeded)
-            {
-                foreach (var error in roleResult.Errors)
-                {
-                    ModelState.AddModelError("", error.Description);
-                }
-                return View(registerVM);
-            }
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            var link = Url.Action("EmailConfirmation","Account",new {token = token , user = user},Request.Scheme);
+            _emailService.Send(user.Email, "Email Confirmation", $"<a href='{link}'>Confirm</a>", true);
 
             return RedirectToAction("Login");
         }
+
+        public async Task<IActionResult> EmailConfirmation(string token,string user)
+        {
+            if (String.IsNullOrWhiteSpace(token)|| String.IsNullOrWhiteSpace(user)) 
+                return BadRequest(ModelState);
+
+            var us =await _userManager.FindByNameAsync(user);
+            await _userManager.ConfirmEmailAsync(us, token);
+            return Content("Email Confirmed");
+        }
+
+
 
         public async Task<IActionResult> PrivacyPolicy()
         {

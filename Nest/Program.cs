@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Nest.Data;
 using Nest.Models;
+using Nest.Services.Implements;
+using Nest.Services.Interfaces;
 using Nest.ViewComponents;
 
 namespace Nest
@@ -19,7 +21,7 @@ namespace Nest
                 cfg.UseSqlServer(builder.Configuration.GetConnectionString("MSSQL"))
             );
 
-
+            builder.Services.AddTransient<IEmailService, EmailService>();
 
             builder.Services.AddIdentity<AppUser, IdentityRole>(option =>
             {
@@ -29,11 +31,17 @@ namespace Nest
                 option.Password.RequireDigit = true;
                 option.Password.RequiredLength = 8;
                 option.Password.RequireNonAlphanumeric = true;
-                        
+
+                option.SignIn.RequireConfirmedEmail = true;
             }).AddEntityFrameworkStores<NestContext>().AddDefaultTokenProviders();
 
+            builder.Services.ConfigureApplicationCookie(opt =>
+            {
+                opt.LoginPath = "/Auth/Login";
+                opt.AccessDeniedPath = "/Auth/AccessDenied";
+            });
 
-
+            //builder.Services.AddScoped<RedirectIfInAdminAreaAttribute>();
 
             var app = builder.Build();
 
